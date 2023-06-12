@@ -116,16 +116,16 @@
   height: 112.5rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-\[21\.25rem\] {
   width: 21.25rem;
 }
 
 .w-\[44\.75rem\] {
   width: 44.75rem;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .flex-1 {

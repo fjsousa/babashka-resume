@@ -1,4 +1,4 @@
-{:paths ["src"]
+{:paths ["src/clj"]
  :deps {org.babashka/http-server {:mvn/version "0.1.11"}
         org.babashka/cli {:mvn/version "0.2.23"}}
  :tasks
@@ -29,6 +29,5 @@
   -dev {:depends [serve prn]}
 
   dev {:task (run '-dev {:parallel true})}
-
 
   yaml-to-edn (shell "bb -m yaml-to-edn")}}
