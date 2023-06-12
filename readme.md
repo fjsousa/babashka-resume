@@ -12,6 +12,18 @@ I used this [figma template](https://www.figma.com/community/file/12306703845250
 
 ## build
 
+```
+bb -m yaml-to-edn
+```
+
 ## check it
 
-## print
+```
+bb dev
+```
+
+Then [localhost:1337](http://localhost:1337)
+
+## print to PDF
+
+This needs a bit more work but I simply hit CTRL+P from the browser and play with the margins until I can fit the whole document in.
