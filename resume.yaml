@@ -1,0 +1,52 @@
+# Personal Information
+personal_info:
+  name: John Doe
+  email: johndoe@example.com
+  phone: +1 123-456-7890
+  address: 123 Main St, City, State, ZIP
+
+# Summary or Objective
+summary: >
+  A motivated and experienced professional with a strong background in software development seeking a challenging position in the tech industry.
+
+# Education
+education:
+  - degree: Bachelor of Science in Computer Science
+    university: XYZ University
+    year: 2015
+
+# Work Experience
+experience:
+  - title: Software Engineer
+    company: ABC Inc.
+    location: City, State
+    dates: "2016 - 2022"
+    responsibilities:
+      - Developed and maintained web applications using HTML, CSS, and JavaScript.
+      - Collaborated with cross-functional teams to deliver high-quality software products.
+      - Conducted code reviews and implemented best practices for code quality and maintainability.
+
+# Skills
+skills:
+  - Programming Languages: Python, JavaScript, Java
+  - Web Development: HTML, CSS, React.js
+  - Database: MySQL, MongoDB
+  - Version Control: Git
+
+# Projects
+projects:
+  - title: Online Shopping Website
+    description: >
+      Developed a responsive e-commerce website using React.js and Node.js.
+      Integrated with a backend API to handle product listing, shopping cart, and user authentication.
+    year: 2021
+
+# Certifications
+certifications:
+  - title: AWS Certified Developer - Associate
+    year: 2022
+
+# Interests
+interests:
+  - Traveling
+  - Photography

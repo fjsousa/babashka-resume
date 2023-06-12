@@ -1,0 +1,34 @@
+{:paths ["src"]
+ :deps {org.babashka/http-server {:mvn/version "0.1.11"}
+        org.babashka/cli {:mvn/version "0.2.23"}}
+ :tasks
+
+ {:requires ([babashka.cli :as cli])
+  :init (def cli-opts (cli/parse-opts *command-line-args* {:coerce {:port :int}}))
+  :enter (println "Entering:" (:name (current-task)) " - " (:doc (current-task)) " With args: " *command-line-args* )
+
+  nrepl
+  {:requires ([babashka.fs :as fs]
+              [babashka.nrepl.server :as srv])
+   :task (do (srv/start-server! {:host "localhost"
+                                 :port 1339})
+             (spit ".nrepl-port" "1339")
+             (-> (Runtime/getRuntime)
+                 (.addShutdownHook
+                  (Thread. (fn [] (fs/delete ".nrepl-port")))))
+             (deref (promise)))}
+
+  serve {:doc "Serve static assets"
+         :requires ([babashka.http-server :as server])
+         :task (server/exec (merge {:port 1337
+                                    :dir "./html/"}
+                                   cli-opts))}
+
+  prn {:task (clojure "-X clojure.core/prn" cli-opts)}
+
+  -dev {:depends [serve prn]}
+
+  dev {:task (run '-dev {:parallel true})}
+
+
+  yaml-to-edn (shell "bb -m yaml-to-edn")}}
