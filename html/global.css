@@ -201,16 +201,16 @@
   font-family: 'Playfair Display';
 }
 
+.text-3xl {
+  font-size: 1.38rem;
+}
+
 .text-\[1\.13rem\] {
   font-size: 1.13rem;
 }
 
 .text-\[1\.25rem\] {
   font-size: 1.25rem;
-}
-
-.text-\[1\.38rem\] {
-  font-size: 1.38rem;
 }
 
 .text-\[1\.5rem\] {
@@ -229,12 +229,32 @@
   font-size: 3.75rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-5xl {
+  font-size: 1.5rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
 
 .leading-120 {
   line-height: 120%;
+}
+
+.leading-140 {
+  line-height: 140%;
+}
+
+.leading-148 {
+  line-height: 148%;
 }
 
 .leading-152 {
@@ -245,16 +265,8 @@
   line-height: 120%;
 }
 
-.leading-\[140\%\] {
-  line-height: 140%;
-}
-
 .leading-\[148\%\] {
   line-height: 148%;
-}
-
-.leading-\[152\.62\%\] {
-  line-height: 152.62%;
 }
 
 .text-dimgray {
