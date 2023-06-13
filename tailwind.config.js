@@ -31,6 +31,12 @@ module.exports = {
         width: {
             "44": "44.75rem",
             "21": "21.25rem"
+        },
+        gap: {
+            "5": "5rem",
+            "025": "0.25rem",
+            "25": "2.5rem",
+            "013": "0.13rem"
         }
     },
     corePlugins: {
