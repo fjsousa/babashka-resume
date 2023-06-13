@@ -6,7 +6,10 @@
 
  {:requires ([babashka.cli :as cli])
   :init (def cli-opts (cli/parse-opts *command-line-args* {:coerce {:port :int}}))
-  :enter (println "Entering:" (:name (current-task)) " - " (:doc (current-task)) " With args: " *command-line-args* )
+  :enter (println (format "Entering: %s - %s %s" (:name (current-task)) (:doc (current-task))
+                          (if *command-line-args*
+                            (str " With args: " *command-line-args*)
+                            "")))
 
   nrepl
   {:requires ([babashka.fs :as fs]
@@ -31,8 +34,27 @@
 
   dev {:task (run '-dev {:parallel true})}
 
-  beautify {:doc "pretty print html document. pass filepath as first arg."
+  beautify {:doc "pretty print html document."
             :task (shell "npx js-beautify --type html html/*.html -r -s 2 -d")}
 
-  yaml-to-edn (do (shell "bb -m yaml-to-edn")
-                  (run 'beautify))}}
+  yaml-to-edn {:doc "builds html/index.html"
+               :task (do (shell "bb -m yaml-to-edn")
+                         (run 'beautify))}
+  watch-css {:doc "produces html/global.css"
+             :task (shell "npx tailwindcss -i ./src/css/global.css -o ./html/global.css --watch")}
+  watch-build {:requires ([pod.babashka.fswatcher :as fw]
+                          [babashka.fs :as fs])
+               :doc "Watches clj and yaml files and produces html/index.html."
+               :task (do (run 'yaml-to-edn)
+                         (println "CTRL-C to quit...")
+                         (fw/watch "." (fn [{:keys [type path]}]
+
+                                         (when (or
+                                                (= path "./resume.yaml")
+                                                (= (fs/extension path) "clj"))
+
+                                           (println path " changed.")
+                                           (run 'yaml-to-edn))) {:delay-ms 1000})
+                         (deref (promise)))}
+  -watch-everything {:depends [watch-css watch-build]}
+  watch-everything {:task (run '-watch-everything {:parallel true})}}}
