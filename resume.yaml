@@ -91,12 +91,6 @@ projects:
   - open source data
   - etc
 
-# Certifications
-certifications:
-  - title: AWS Certified Developer - Associate
-    year: 2022
-
-# Interests
-interests:
-  - Traveling
-  - Photography
+awards:
+  - Recognized as 2nd Place winner in the MSc. Category of the 2011 Fraunhofer Challenge, awarded for a practical research project.
+  - As a 2011 ISCTE-IUL MIT Startup Pitch Competition semi-finalist, contributed by performing a fluid flow simulation for a high altitude wind turbine project.
