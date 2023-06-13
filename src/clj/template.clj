@@ -1,67 +1,68 @@
 (ns template)
 
+(defn head []
+  [:head
+   [:meta {:charset "utf-8"}] [:meta {:name "viewport" :content "initial-scale=1, width=device-width"}]
+   [:link {:rel "stylesheet" :href "./global.css"}]
+   [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Playfair Display:wght@700&display=swap"}]
+   [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
 
-
-
-
-(def template
-  [:html [:head
-          [:meta {:charset "utf-8"}] [:meta {:name "viewport" :content "initial-scale=1, width=device-width"}]
-          [:link {:rel "stylesheet" :href "./global.css"}]
-          [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Playfair Display:wght@700&display=swap"}]
-          [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]]
-
+(defn template [{:keys [personal-info skills toolbox summary] :as resume-data}]
+  [:html (head)
    [:div
     {:class
      "relative bg-white w-full h-[112.5rem] overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-[5rem] text-left text-[1.13rem] text-gray font-inter"}
     [:div
      {:class
       "self-stretch w-[21.25rem] flex flex-col items-start justify-start gap-[5rem]"}
-     [:b
-      {:class
-       "self-stretch relative text-[3.75rem] leading-[120%] font-playfair-display"}
-      "Name Lastname"]
+
+     ;;name
+     [:b {:class
+          "self-stretch relative text-[3.75rem] leading-[120%] font-playfair-display"}
+      (:name personal-info)]
+
+     ;;address, email, etc
      [:div
       {:class "self-stretch relative leading-[152.62%]"}
-      [:p {:class "m-0 [text-decoration:underline]"} "website.com"]
-      [:p {:class "m-0 [text-decoration:underline]"} "email@domain.com"]
-      [:p {:class "m-0"} "(123) 456-7890"]]
+      [:p {:class "m-0"} (:email personal-info)]
+      [:p {:class "m-0"} (:phone personal-info)]
+      [:p {:class "m-0"} (:address personal-info)]]
+
      [:div
       {:class
        "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-[1.38rem]"}
+
+      ;; Main skills
       [:div
        {:class
         "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
        [:b
         {:class "relative leading-[152.62%] inline-block w-[21.25rem]"}
         "Main skills"]
-       [:div
-        {:class
-         "relative text-[1.25rem] leading-[148%] font-medium inline-block w-[21.25rem]"}
-        [:p {:class "m-0"} "User Research"]
-        [:p {:class "m-0"} "Design Sprints"]
-        [:p {:class "m-0"} "Concept Design"]
-        [:p {:class "m-0"} "Prototyping"]
-        [:p {:class "m-0"} "Usability Testing"]
-        [:p {:class "m-0"} "Design Systems"]
-        [:p {:class "m-0"} "Agile Practices"]]]
+       (into
+        [:div
+         {:class
+          "relative text-[1.25rem] leading-[148%] font-medium inline-block w-[21.25rem]"}]
+        (map (fn [skill]
+               [:p {:class "m-0"} skill]) skills))]
+
+      ;;Languages, databases, etc
       [:div
        {:class
         "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
+
        [:b
         {:class "relative leading-[152.62%] inline-block w-[21.25rem]"}
-        "Preferred tools"]
+        "Toolbox"]
+
        [:div
         {:class
          "relative text-[1.25rem] leading-[148%] font-medium inline-block w-[21.25rem]"}
-        [:p {:class "m-0"} "Miro - FigJam"]
-        [:p {:class "m-0"} "Figma - Penpot"]
-        [:p {:class "m-0"} "Abstract"]
-        [:p {:class "m-0"} "Maze / Usertesting"]
-        [:p {:class "m-0"} "Webflow - Framer"]
-        [:p {:class "m-0"} "Notion / GDocs"]
-        [:p {:class "m-0"} "Zeroheight"]
-        [:p {:class "m-0"} "Jira / Asana"]]]
+
+        (map (fn [tool]
+               [:p {:class "m-0"} tool]) toolbox)]]
+      ;;Human languages
+
       [:div
        {:class
         "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
@@ -73,16 +74,22 @@
          "relative text-[1.25rem] leading-[148%] font-medium inline-block w-[21.25rem]"}
         [:p {:class "m-0"} "Spanish (Native)"]
         [:p {:class "m-0"} "English (Advanced)"]]]]
-     [:div
-      {:class
-       "relative leading-[148%] font-medium text-dimgray inline-block w-[21.25rem]"}
-      "Updated on May 2023"]]
+
+     ;;Updated on ...
+
+     #_[:div
+        {:class
+         "relative leading-[148%] font-medium text-dimgray inline-block w-[21.25rem]"}
+        "Updated on May 2023"]]
+
     [:div
      {:class
       "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-[1.38rem]"}
-     [:i
-      {:class "self-stretch relative leading-[140%]"}
-      "In dui lectus, molestie lacinia lectus et, elementum fringilla lorem.\n          Morbi elementum massa a erat finibus commodo. Duis id porttitor\n          tortor. Praesent mauris ipsum, mattis nec pretium nec, semper\n          convallis nisl. Aliquam vulputate iaculis dui eu blandit. Class aptent\n          taciti sociosqu ad litora torquent per conubia nostra, per inceptos\n          himenaeos. Integer et ullamcorper diam."]
+     (into
+      [:i
+       {:class "self-stretch relative leading-[140%]"}]
+      (map (fn [summary-paragraph]
+             [:p summary-paragraph]) summary))
      [:div
       {:class
        "self-stretch flex-1 flex flex-col items-start justify-start gap-[2.5rem] text-[1.25rem]"}
