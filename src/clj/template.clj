@@ -16,24 +16,22 @@
 
 (defn template [{:keys [personal-info skills toolbox summary education experience] :as resume-data}]
   [:html (head)
-   [:div
-    {:class
-     "relative bg-white w-full h-[112.5rem] overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-[5rem] text-left text-[1.13rem] text-gray font-inter"}
+
+   [:div {:class
+     "relative bg-white w-full h-[112.5rem] overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-[5rem] text-left text-lg text-gray font-inter"}
     [:div
      {:class
       "self-stretch w-[21.25rem] flex flex-col items-start justify-start gap-[5rem]"}
 
-     ;;name
-     [:b {:class
-          "self-stretch relative text-[3.75rem] leading-[120%] font-playfair-display"}
+     ;; NAME
+     [:b.self-stretch.relative.text-mega.leading-120.font-playfair-display
       (:name personal-info)]
 
-     ;;address, email, etc
-     [:div
-      {:class "self-stretch relative leading-[152.62%]"}
-      [:p {:class "m-0"} (:email personal-info)]
-      [:p {:class "m-0"} (:phone personal-info)]
-      [:p {:class "m-0"} (:address personal-info)]]
+     ;;ADDRESS, EMAIL, ETC
+     [:div.self-stretch.relative.leading-152
+      [:p.m-0 (:email personal-info)]
+      [:p.m-0 (:phone personal-info)]
+      [:p.m-0 (:address personal-info)]]
 
      [:div
       {:class

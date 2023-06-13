@@ -13,12 +13,18 @@ module.exports = {
                 "playfair-display": "'Playfair Display'",
             },
         },
+        lineHeight: {
+            "120": "120%",
+            "152": "152.62%"
+        },
         fontSize: {
             lg: "1.13rem",
             base: "1rem",
             xl: "1.25rem",
-            "5xl": "1.5rem",
             "3xl": "1.38rem",
+            "5xl": "1.5rem",
+            mega: "3.75rem"
+
         },
     },
     corePlugins: {
