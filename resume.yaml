@@ -31,6 +31,8 @@ education:
 
 # Work Experience
 experience:
+
+  #AWAZE
   - title: Clojure contractor
     company: Awaze
     location: Manchester
@@ -50,6 +52,48 @@ experience:
       - AWS
       - Postgres
       - Kotlin
+
+  # CROWDPROCESS
+  - title: Application Developer
+    company: Crowdprocess
+    location: Lisbon
+    dates:
+      - 01/03/2013
+      - 01/03/2014
+    achievements:
+      - As the third employee of an early-stage startup, played a pivotal role in conducting research and development of applications for a distributed computing platform.
+      - Provided exceptional support and documentation to clients, ensuring
+        that all needs were met and exceeded expectations.
+      - Worked collaboratively with experts to implement cutting-edge algorithms across multiple scientific fields such as computer vision, neuroscience, bioinformatics, genetic algorithms, and forest fire prediction.
+      - Prominent speaker at conferences and tech meetups, sharing my insights on the latest industry trends and advancements.
+      - Developed an innovative forest-fire prediction software, based on original research, which has been highly acclaimed by experts in the field.
+    technologies:
+      - Javascript
+      - node.js
+      - Postgres
+      - C/C++
+      - Python
+      - AWS
+
+  # LASEF
+  - title: Research Assistant
+    company: University of Lisbon
+    location: Lisbon
+    dates:
+      - 01/01/2010
+      - 01/11/2012
+    achievements:
+      - During my Master's coursework, I conducted basic research in a fluid simulation lab and earned a research grant for my dissertation.
+      - Achieved speed-ups of 200 times by porting an open-source forest fire library written in C to GPUs.
+      - Co-authored two papers with 28 citations as of 2023.
+      - In September 2010, I secured an FCT research grant to conduct CFD analysis of high-speed trains and renewable energy cogeneration devices.
+    technologies:
+      - C
+      - CUDA
+      - Java
+      - StarCCM+
+      - Paraview
+
 
 # Skills
 skills:

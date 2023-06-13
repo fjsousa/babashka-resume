@@ -24,8 +24,9 @@
                         awards papers] :as resume-data}]
   [:html (head)
 
+   ;;had to remove the page limit: h-[112.5rem]
    [:div {:class
-     "relative bg-white w-full h-[112.5rem] overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-inter"}
+          "relative bg-white w-full  overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-inter"}
 
     [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
@@ -183,7 +184,7 @@
                 ;;dates
                 [:div.relative.text-base.leading-148.font-medium.text-dimgray
 
-                (str (->short-date (first (:dates experience-entry)))
+                 (str (->short-date (first (:dates experience-entry)))
                       " - "
                       (->short-date (last (:dates experience-entry))))]]
 
