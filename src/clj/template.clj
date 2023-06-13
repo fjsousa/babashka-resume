@@ -35,51 +35,43 @@
 
      [:div
       {:class
-       "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-[1.38rem]"}
+       "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-3xl"}
 
       ;; Main skill
 
-      [:div
-       {:class
-        "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
-       [:b
-        {:class "relative leading-[152.62%] inline-block w-[21.25rem]"}
+      [:div {:class "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
+
+       [:b {:class "relative leading-152 inline-block w-[21.25rem]"}
         "Main skills"]
+
        (into
-        [:div
-         {:class
-          "relative text-[1.25rem] leading-[148%] font-medium inline-block w-[21.25rem]"}]
+        [:div {:class "relative text-xl leading-148 font-medium inline-block w-[21.25rem]"}]
         (map (fn [skill]
-               [:p {:class "m-0"} skill]) skills))]
+               [:p.m-0 skill]) skills))]
 
       ;;Languages, databases, etc
-      [:div
-       {:class
-        "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
+      [:div {:class "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
 
-       [:b
-        {:class "relative leading-[152.62%] inline-block w-[21.25rem]"}
+       [:b {:class "relative leading-152 inline-block w-[21.25rem]"}
         "Toolbox"]
 
-       [:div
-        {:class
-         "relative text-[1.25rem] leading-[148%] font-medium inline-block w-[21.25rem]"}
+       [:div {:class "relative text-xl leading-148 font-medium inline-block w-[21.25rem]"}
 
         (map (fn [tool]
                [:p {:class "m-0"} tool]) toolbox)]]
+
       ;;Human languages
 
-      [:div
-       {:class
-        "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
-       [:b
-        {:class "relative leading-[152.62%] inline-block w-[21.25rem]"}
+      [:div {:class "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
+
+       [:b {:class "relative leading-152 inline-block w-[21.25rem]"}
         "Languages"]
+
        [:div
         {:class
-         "relative text-[1.25rem] leading-[148%] font-medium inline-block w-[21.25rem]"}
-        [:p {:class "m-0"} "Spanish (Native)"]
-        [:p {:class "m-0"} "English (Advanced)"]]]]
+         "relative text-xl leading-148 font-medium inline-block w-[21.25rem]"}
+        [:p.m-0 "Spanish (Native)"]
+        [:p.m-0 "English (Advanced)"]]]]
 
      ;;Updated on ...
 
@@ -89,49 +81,48 @@
         "Updated on May 2023"]]
 
 
-    [:div
-     {:class
-      "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-[1.38rem]"}
+    [:div {:class "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-3xl"}
 
      ;; Summary
      (into
-      [:i
-       {:class "self-stretch relative leading-[140%]"}]
+
+      [:i.self-stretch.relative.leading-140]
+
       (map (fn [summary-paragraph]
              [:p summary-paragraph]) summary))
 
      ;; Education
      (into
       [:div
-       {:class
-        "self-stretch flex-1 flex flex-col items-start justify-start gap-[2.5rem] text-[1.25rem]"}
-       [:b
-        {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
+
+       {:class "self-stretch flex-1 flex flex-col items-start justify-start gap-[2.5rem] text-xl"}
+
+       [:b {:class "relative text-5xl inline-block w-[21.25rem]"}
         "Education"]]
 
       ;;Education
       [(map
         (fn [education-entry]
-          [:div
-           {:class
-            "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-           [:div
-            {:class
-             "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-            [:b
-             {:class "flex-1 relative leading-[148%]"}
+          [:div {:class "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
+
+           [:div {:class "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+
+            [:b.flex-1.relative.leading-148
+
              (format "%s at %s"
                      (:degree education-entry)
                      (:university education-entry))]
-            [:div
-             {:class
-              "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
+
+            [:div.relative.text-base.leading-148.font-medium.text-dimgray
+
              (str (->short-date (first (:dates education-entry)))
                   " - "
                   (->short-date (last (:dates education-entry))))]]
+
            [:div
             {:class
-             "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
+             "relative text-lg leading-120 inline-block w-[44.75rem]"}
+
             (apply str
                    (flatten
 
@@ -147,33 +138,30 @@
 
 
 
-       [:b
-        {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
+       ;;EXPERIENCE
+       [:b {:class "relative text-5xl inline-block w-[21.25rem]"}
         "Experience"]
 
        (map (fn [experience-entry]
-              [:div
-               {:class
-                "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-               [:div
-                {:class
-                 "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-                [:b
-                 {:class "flex-1 relative leading-[148%]"}
+              [:div {:class "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
+
+               [:div {:class "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+
+                [:b.flex-1.relative.leading-148
+
                  (format "%s at %s"
                          (:title experience-entry)
                          (:company experience-entry))]
                 ;;dates
-                [:div
-                 {:class
-                  "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
+                [:div {:class "relative text-base leading-148 font-medium text-dimgray"}
                  (str (->short-date (first (:dates experience-entry)))
                       " - "
                       (->short-date (last (:dates experience-entry))))]]
-               [:div
-                {:class
-                 "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
+
+               ;;description
+               [:div {:class "relative text-lg leading-120 inline-block w-[44.75rem]"}
                 (:description experience-entry)]])
+
             experience)])
      [:div
       {:class
