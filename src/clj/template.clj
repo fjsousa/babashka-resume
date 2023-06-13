@@ -14,7 +14,8 @@
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Playfair Display:wght@700&display=swap"}]
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
 
-(defn template [{:keys [personal-info skills toolbox summary education experience] :as resume-data}]
+(defn template [{:keys [personal-info skills toolbox summary education experience
+                        awards] :as resume-data}]
   [:html (head)
 
    [:div {:class
@@ -69,6 +70,17 @@
 
         [:p.m-0 "Spanish (Native)"]
         [:p.m-0 "English (Advanced)"]]]]
+
+     ;;awards
+     [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+
+      [:b.relative.leading-152.inline-block.w-21
+       "Awards"]
+
+      [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
+
+       (map (fn [item]
+              [:p.m-0 item]) awards)]]
 
      ;;Updated on ...
 
