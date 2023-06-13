@@ -190,7 +190,9 @@
                ;;description
                [:div.relative.text-lg.leading-120.inline-block.w-44
 
-                (:description experience-entry)]])
+                [:p (:description experience-entry)]
+                [:ul (map (fn [item] [:li item]) (:achievements experience-entry))]
+                [:p (interpose " - " (:technologies experience-entry))]]])
 
             experience)])
      [:div
