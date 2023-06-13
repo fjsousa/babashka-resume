@@ -221,12 +221,24 @@
   font-size: 1rem;
 }
 
-.text-\[3\.75rem\] {
+.text-lg {
+  font-size: 1.13rem;
+}
+
+.text-mega {
   font-size: 3.75rem;
 }
 
 .font-medium {
   font-weight: 500;
+}
+
+.leading-120 {
+  line-height: 120%;
+}
+
+.leading-152 {
+  line-height: 152.62%;
 }
 
 .leading-\[120\%\] {
