@@ -146,4 +146,6 @@
       {:class
        "self-stretch relative text-[1.13rem] leading-[148%] text-dimgray text-right"}
       "Learn more in my LinkedIn profile:"
-      [:span {:class "[text-decoration:underline]"} "in/username"]]]]])
+      [:span {:class "[text-decoration:underline]"} "in/username"]]]]
+   (when (not (System/getenv "RELEASE"))
+     [:script {:src "live.js"}])])
