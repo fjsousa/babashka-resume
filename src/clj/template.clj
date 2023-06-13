@@ -1,4 +1,11 @@
-(ns template)
+(ns template
+  (:require [clojure.string :as str]))
+
+(defn ->short-date
+  [date-string]
+  (.format
+   (java.time.LocalDate/parse (str/join "-" (reverse (str/split date-string #"/"))))
+   (java.time.format.DateTimeFormatter/ofPattern "MMM yyyy")))
 
 (defn head []
   [:head
@@ -7,7 +14,7 @@
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Playfair Display:wght@700&display=swap"}]
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
 
-(defn template [{:keys [personal-info skills toolbox summary] :as resume-data}]
+(defn template [{:keys [personal-info skills toolbox summary education experience] :as resume-data}]
   [:html (head)
    [:div
     {:class
@@ -32,7 +39,8 @@
       {:class
        "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-[1.38rem]"}
 
-      ;; Main skills
+      ;; Main skill
+
       [:div
        {:class
         "w-[21.25rem] flex flex-col items-start justify-start gap-[0.25rem]"}
@@ -103,45 +111,72 @@
         {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
         "Education"]]
 
-      [#_[:div
-          {:class
-           "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
+      ;;Education
+      [(map
+        (fn [education-entry]
           [:div
            {:class
-            "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-           [:b
-            {:class "flex-1 relative leading-[148%]"}
-            "Course at Institution"]
+            "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
            [:div
             {:class
-             "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-            "Apr 2021 - Apr 2022"]]
-          [:div
-           {:class
-            "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
+             "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+            [:b
+             {:class "flex-1 relative leading-[148%]"}
+             (format "%s at %s"
+                     (:degree education-entry)
+                     (:university education-entry))]
+            [:div
+             {:class
+              "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
+             (str (->short-date (first (:dates education-entry)))
+                  " - "
+                  (->short-date (last (:dates education-entry))))]]
+           [:div
+            {:class
+             "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
+            (apply str
+                   (flatten
 
-       #_[:b
-          {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
-          "Experience"]
-       #_[:div
-          {:class
-           "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-          [:div
-           {:class
-            "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-           [:b
-            {:class "flex-1 relative leading-[148%]"}
-            "Job Title at Company Name"]
-           [:div
-            {:class
-             "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-            "Apr 2020 - Apr 2021"]]
-          [:div
-           {:class
-            "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]]
-       )
+                    ;;activities
+                    [(when (:activities education-entry)
+                       (interpose ". " (:activities education-entry)))
+
+                     ". "
+                     ;;grades
+                     (when (:grade education-entry)
+                       ["Grade: " (:grade education-entry) "."])]))]])
+        education)
+
+
+
+       [:b
+        {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
+        "Experience"]
+
+       (map (fn [experience-entry]
+              [:div
+               {:class
+                "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
+               [:div
+                {:class
+                 "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+                [:b
+                 {:class "flex-1 relative leading-[148%]"}
+                 (format "%s at %s"
+                         (:title experience-entry)
+                         (:company experience-entry))]
+                ;;dates
+                [:div
+                 {:class
+                  "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
+                 (str (->short-date (first (:dates experience-entry)))
+                      " - "
+                      (->short-date (last (:dates experience-entry))))]]
+               [:div
+                {:class
+                 "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
+                (:description experience-entry)]])
+            experience)])
      [:div
       {:class
        "self-stretch relative text-[1.13rem] leading-[148%] text-dimgray text-right"}
