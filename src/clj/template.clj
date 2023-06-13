@@ -82,142 +82,66 @@
          "relative leading-[148%] font-medium text-dimgray inline-block w-[21.25rem]"}
         "Updated on May 2023"]]
 
+
     [:div
      {:class
       "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-[1.38rem]"}
+
+     ;; Summary
      (into
       [:i
        {:class "self-stretch relative leading-[140%]"}]
       (map (fn [summary-paragraph]
              [:p summary-paragraph]) summary))
-     [:div
-      {:class
-       "self-stretch flex-1 flex flex-col items-start justify-start gap-[2.5rem] text-[1.25rem]"}
-      [:b
-       {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
-       "Education"]
+
+     ;; Education
+     (into
       [:div
        {:class
-        "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-       [:div
-        {:class
-         "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-        [:b
-         {:class "flex-1 relative leading-[148%]"}
-         "Course at Institution"]
-        [:div
-         {:class
-          "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-         "Apr 2022 - Present"]]
-       [:div
-        {:class
-         "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
-      [:div
-       {:class
-        "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-       [:div
-        {:class
-         "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-        [:b
-         {:class "flex-1 relative leading-[148%]"}
-         "Course at Institution"]
-        [:div
-         {:class
-          "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-         "Apr 2021 - Apr 2022"]]
-       [:div
-        {:class
-         "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
-      [:b
-       {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
-       "Experience"]
-      [:div
-       {:class
-        "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-       [:div
-        {:class
-         "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-        [:b
-         {:class "flex-1 relative leading-[148%]"}
-         "Job Title at Company Name"]
-        [:div
-         {:class
-          "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-         "Apr 2020 - Apr 2021"]]
-       [:div
-        {:class
-         "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
-      [:div
-       {:class
-        "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-       [:div
-        {:class
-         "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-        [:b
-         {:class "flex-1 relative leading-[148%]"}
-         "Job Title at Company Name"]
-        [:div
-         {:class
-          "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-         "Apr 2019 - Apr 2020"]]
-       [:div
-        {:class
-         "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
-      [:div
-       {:class
-        "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-       [:div
-        {:class
-         "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-        [:b
-         {:class "flex-1 relative leading-[148%]"}
-         "Job Title at Company Name"]
-        [:div
-         {:class
-          "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-         "Apr 2018 - Apr 2019"]]
-       [:div
-        {:class
-         "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
-      [:div
-       {:class
-        "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-       [:div
-        {:class
-         "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-        [:b
-         {:class "flex-1 relative leading-[148%]"}
-         "Job Title at Company Name"]
-        [:div
-         {:class
-          "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-         "Apr 2017 - Apr 2018"]]
-       [:div
-        {:class
-         "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
-      [:div
-       {:class
-        "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
-       [:div
-        {:class
-         "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
-        [:b
-         {:class "flex-1 relative leading-[148%]"}
-         "Job Title at Company Name"]
-        [:div
-         {:class
-          "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
-         "Apr 2017 - Apr 2018"]]
-       [:div
-        {:class
-         "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]]
+        "self-stretch flex-1 flex flex-col items-start justify-start gap-[2.5rem] text-[1.25rem]"}
+       [:b
+        {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
+        "Education"]]
+
+      [#_[:div
+          {:class
+           "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
+          [:div
+           {:class
+            "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+           [:b
+            {:class "flex-1 relative leading-[148%]"}
+            "Course at Institution"]
+           [:div
+            {:class
+             "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
+            "Apr 2021 - Apr 2022"]]
+          [:div
+           {:class
+            "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
+           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]
+
+       #_[:b
+          {:class "relative text-[1.5rem] inline-block w-[21.25rem]"}
+          "Experience"]
+       #_[:div
+          {:class
+           "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
+          [:div
+           {:class
+            "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+           [:b
+            {:class "flex-1 relative leading-[148%]"}
+            "Job Title at Company Name"]
+           [:div
+            {:class
+             "relative text-[1rem] leading-[148%] font-medium text-dimgray"}
+            "Apr 2020 - Apr 2021"]]
+          [:div
+           {:class
+            "relative text-[1.13rem] leading-[120%] inline-block w-[44.75rem]"}
+           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas\n              varius orci a nisl suscipit, et molestie ligula semper. Cras in\n              bibendum augue. Phasellus lacinia a turpis a ullamcorper."]]]
+       )
      [:div
       {:class
        "self-stretch relative text-[1.13rem] leading-[148%] text-dimgray text-right"}

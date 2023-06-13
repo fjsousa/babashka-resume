@@ -8,6 +8,7 @@
 (def source-file "resume.yaml")
 (def destination-file "html/index.html")
 
+
 (defn -main
   [& args]
   (spit destination-file (hiccup2/html
@@ -16,7 +17,7 @@
                             (slurp source-file))))))
 
 
-(defn watch
+#_(defn watch
   [& args]
 
   (println "Watching current directory for changes... Press Ctrl-C to quit.")
