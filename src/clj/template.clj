@@ -7,6 +7,12 @@
    (java.time.LocalDate/parse (str/join "-" (reverse (str/split date-string #"/"))))
    (java.time.format.DateTimeFormatter/ofPattern "MMM yyyy")))
 
+(defn ->year
+  [date-string]
+  (.format
+   (java.time.LocalDate/parse (str/join "-" (reverse (str/split date-string #"/"))))
+   (java.time.format.DateTimeFormatter/ofPattern "yyyy")))
+
 (defn head []
   [:head
    [:meta {:charset "utf-8"}] [:meta {:name "viewport" :content "initial-scale=1, width=device-width"}]
@@ -15,7 +21,7 @@
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
-                        awards] :as resume-data}]
+                        awards papers] :as resume-data}]
   [:html (head)
 
    [:div {:class
@@ -71,6 +77,20 @@
         [:p.m-0 "Spanish (Native)"]
         [:p.m-0 "English (Advanced)"]]]]
 
+     ;;papers
+     [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+
+      [:b.relative.leading-152.inline-block.w-21
+       "Research Papers"]
+
+      [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
+
+       (map (fn [{:keys [title doi date]}]
+              [:p.m-0
+               [:span (str "- "title ", ")]
+               [:span (str (->year date) ". ")]
+               [:a {:href doi :target "_blank"} "doi"]]) papers)]]
+
      ;;awards
      [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
 
@@ -80,7 +100,7 @@
       [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
 
        (map (fn [item]
-              [:p.m-0 item]) awards)]]
+              [:p.m-0 (str "- " item)]) awards)]]
 
      ;;Updated on ...
 
