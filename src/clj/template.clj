@@ -18,10 +18,9 @@
   [:html (head)
 
    [:div {:class
-     "relative bg-white w-full h-[112.5rem] overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-[5rem] text-left text-lg text-gray font-inter"}
-    [:div
-     {:class
-      "self-stretch w-21 flex flex-col items-start justify-start gap-[5rem]"}
+     "relative bg-white w-full h-[112.5rem] overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-inter"}
+
+    [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
      ;; NAME
      [:b.self-stretch.relative.text-mega.leading-120.font-playfair-display
@@ -33,43 +32,41 @@
       [:p.m-0 (:phone personal-info)]
       [:p.m-0 (:address personal-info)]]
 
-     [:div
-      {:class
-       "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-3xl"}
+     [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
       ;; Main skill
 
-      [:div {:class "w-21 flex flex-col items-start justify-start gap-[0.25rem]"}
+      [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
 
-       [:b {:class "relative leading-152 inline-block w-21"}
+       [:b.relative.leading-152.inline-block.w-21
         "Main skills"]
 
        (into
-        [:div {:class "relative text-xl leading-148 font-medium inline-block w-21"}]
+        [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21]
+
         (map (fn [skill]
                [:p.m-0 skill]) skills))]
 
       ;;Languages, databases, etc
-      [:div {:class "w-21 flex flex-col items-start justify-start gap-[0.25rem]"}
+      [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
 
-       [:b {:class "relative leading-152 inline-block w-21"}
+       [:b.relative.leading-152.inline-block.w-21
         "Toolbox"]
 
-       [:div {:class "relative text-xl leading-148 font-medium inline-block w-21"}
+       [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
 
         (map (fn [tool]
-               [:p {:class "m-0"} tool]) toolbox)]]
+               [:p.m-0 tool]) toolbox)]]
 
       ;;Human languages
 
-      [:div {:class "w-21 flex flex-col items-start justify-start gap-[0.25rem]"}
+      [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
 
        [:b {:class "relative leading-152 inline-block w-21"}
         "Languages"]
 
-       [:div
-        {:class
-         "relative text-xl leading-148 font-medium inline-block w-21"}
+       [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
+
         [:p.m-0 "Spanish (Native)"]
         [:p.m-0 "English (Advanced)"]]]]
 
@@ -81,7 +78,7 @@
         "Updated on May 2023"]]
 
 
-    [:div {:class "self-stretch flex-1 flex flex-col items-start justify-start gap-[5rem] text-3xl"}
+    [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
      ;; Summary
      (into
@@ -93,19 +90,19 @@
 
      ;; Education
      (into
-      [:div
+      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-25.text-xl
 
-       {:class "self-stretch flex-1 flex flex-col items-start justify-start gap-[2.5rem] text-xl"}
 
-       [:b {:class "relative text-5xl inline-block w-21"}
+       [:b.relative.text-5xl.inline-block.w-21
+
         "Education"]]
 
       ;;Education
       [(map
         (fn [education-entry]
-          [:div {:class "w-[44.75rem] flex flex-col items-start justify-start gap-[0.13rem]"}
+          [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
 
-           [:div {:class "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+           [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
 
             [:b.flex-1.relative.leading-148
 
@@ -119,9 +116,7 @@
                   " - "
                   (->short-date (last (:dates education-entry))))]]
 
-           [:div
-            {:class
-             "relative text-lg leading-120 inline-block w-44"}
+           [:div.relative.text-lg.leading-120.inline-block.w-44
 
             (apply str
                    (flatten
@@ -139,13 +134,14 @@
 
 
        ;;EXPERIENCE
-       [:b {:class "relative text-5xl inline-block w-21"}
+       [:b.relative.text-5xl.inline-block.w-21
+
         "Experience"]
 
        (map (fn [experience-entry]
-              [:div {:class "w-44 flex flex-col items-start justify-start gap-[0.13rem]"}
+              [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
 
-               [:div {:class "self-stretch flex flex-row items-center justify-start gap-[0.13rem]"}
+               [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
 
                 [:b.flex-1.relative.leading-148
 
@@ -153,13 +149,15 @@
                          (:title experience-entry)
                          (:company experience-entry))]
                 ;;dates
-                [:div {:class "relative text-base leading-148 font-medium text-dimgray"}
-                 (str (->short-date (first (:dates experience-entry)))
+                [:div.relative.text-base.leading-148.font-medium.text-dimgray
+
+                (str (->short-date (first (:dates experience-entry)))
                       " - "
                       (->short-date (last (:dates experience-entry))))]]
 
                ;;description
-               [:div {:class "relative text-lg leading-120 inline-block w-44"}
+               [:div.relative.text-lg.leading-120.inline-block.w-44
+
                 (:description experience-entry)]])
 
             experience)])
