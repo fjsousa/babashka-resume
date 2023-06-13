@@ -94,3 +94,14 @@ projects:
 awards:
   - Recognized as 2nd Place winner in the MSc. Category of the 2011 Fraunhofer Challenge, awarded for a practical research project.
   - As a 2011 ISCTE-IUL MIT Startup Pitch Competition semi-finalist, contributed by performing a fluid flow simulation for a high altitude wind turbine project.
+
+papers:
+  - title: Faster Than Real Time Stochastic Fire Spread Simulations
+    date: 01/01/2013
+    doi: https://doi.org/10.3970/cmes.2012.089.361
+  - title: Simulation of surface fire fronts using firelib and GPUs
+    date: 01/12/2012
+    doi: https://doi.org/10.1016/j.envsoft.2012.06.006
+  - title: Numerical Investigations on the Inter-Car-Gap Flow for a Generic High Speed Train
+    doi: http://dx.doi.org/10.4203/ccp.98.150
+    date: 01/01/2011
