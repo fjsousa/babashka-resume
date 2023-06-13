@@ -1,45 +1,95 @@
 # Personal Information
-personal_info:
-  name: John Doe
-  email: johndoe@example.com
-  phone: +1 123-456-7890
-  address: 123 Main St, City, State, ZIP
+personal-info:
+  name: Flávio Sousa
+  email: [EMAIL REDACTED]
+  phone: [PHONE REDACTED]
+  address: London
 
 # Summary or Objective
-summary: >
-  A motivated and experienced professional with a strong background in software development seeking a challenging position in the tech industry.
+summary:
+  - Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.
+  - I began my career at a fluids' simulation lab, where I published a novel algorithm for forest fire simulation,  optimized for GPUs. In 2013 I joined the booming Lisbon startup scene and moved to London in 2015. I have hacked code for client demos and been a developer advocate for early stage startups, and also enjoyed working on well financed greenfield re-architectures. I believe people solve problems not tools, so I always look for the most effective solution. I tend to prioritize languages over frameworks, and I can write infrastructure as code when necessary.
+  - I set up Codecadre LTD for my contracting work in 2019. Besides software contracting, I’m available to work with NGOs and offer free mentoring for people from a low-income background.
 
 # Education
 education:
-  - degree: Bachelor of Science in Computer Science
-    university: XYZ University
-    year: 2015
+  - degree: Msc. in Mechanical Engineering
+    university: University of Lisbon
+    dates:
+      - 01/09/2008
+      - 01/06/2011
+    activities:
+      - Course representative 2009/2010
+      - Worker student
+    grade: A
+
+  - degree: Bsc. in Mechanical Engineering
+    university: University of Lisbon
+    dates:
+    - 01/09/2004
+    - 01/09/2008
 
 # Work Experience
 experience:
-  - title: Software Engineer
-    company: ABC Inc.
-    location: City, State
-    dates: "2016 - 2022"
-    responsibilities:
-      - Developed and maintained web applications using HTML, CSS, and JavaScript.
-      - Collaborated with cross-functional teams to deliver high-quality software products.
-      - Conducted code reviews and implemented best practices for code quality and maintainability.
+  - title: Clojure contractor
+    company: Awaze
+    location: Manchester
+    dates:
+      - 01/08/2022
+      - 01/12/2022
+    description:
+      As a Clojure contractor for Awaze, I was placed in a team that was implementing a unified search API across multiple holiday rental businesses. All code was produced alongside the team while ”mobbing”.
+    achievements:
+      - Spoke about the workflow methodology at a conference
+      - Made several critical contributions that helped speed up delivery
+      - Mentored new members of the team and conducted regular Friday afternoon Clojure practice sessions
+      - Successfully Identified bottlenecks with a custom lightweight tool
+      - Taught Clojure best practices to the rest of the team
+    technologies:
+      - Clojure
+      - AWS
+      - Postgres
+      - Kotlin
 
 # Skills
 skills:
-  - Programming Languages: Python, JavaScript, Java
-  - Web Development: HTML, CSS, React.js
-  - Database: MySQL, MongoDB
-  - Version Control: Git
+  - Full-Stack
+  - Algorithms
+  - Blockchain
+  - REPL
+  - Figma
+  - AWS
+
+# languages and frameworks
+toolbox:
+  - Clojure(script)
+  - Javascript
+  - Python
+  - C
+  - CUDA/GPU
+  - Node.js
+  - Lua (NGINX)
+  - Tailwind
+  - Postgres
+  - Kafka
+  - Git
+
+aws:
+  - ECS
+  - EC2
+  - Lambda
+  - Step Functions
+  - Cloudformation
+  - DynamoDB
+
+devops:
+  - Cloudformation
+  - Terraform
 
 # Projects
 projects:
-  - title: Online Shopping Website
-    description: >
-      Developed a responsive e-commerce website using React.js and Node.js.
-      Integrated with a backend API to handle product listing, shopping cart, and user authentication.
-    year: 2021
+  - open source data
+  - etc
 
 # Certifications
 certifications:

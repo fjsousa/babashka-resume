@@ -1,10 +1,33 @@
 (ns yaml-to-edn
   (:require [clj-yaml.core :as yaml]
             [template :refer [template]]
-            [hiccup2.core :as hiccup2]))
+            [hiccup2.core :as hiccup2]
+            [pod.babashka.fswatcher :as fw]
+            [babashka.fs :as fs]))
+
+(def source-file "resume.yaml")
+(def destination-file "html/index.html")
 
 (defn -main
   [& args]
-  (yaml/parse-string
-   (slurp "resume.yaml"))
-  (spit "html/index.html" (hiccup2/html template)))
+  (spit destination-file (hiccup2/html
+                          (template
+                           (yaml/parse-string
+                            (slurp source-file))))))
+
+
+(defn watch
+  [& args]
+
+  (println "Watching current directory for changes... Press Ctrl-C to quit.")
+
+  (fw/watch "." (fn [{:keys [type path]}]
+                  (when (or
+                         (= path "./resume.yaml")
+                         (= (fs/extension path) "clj"))
+
+                    (println path " changed.")
+                    (-main))
+                  ) {:delay-ms 1000})
+
+  @(promise))
