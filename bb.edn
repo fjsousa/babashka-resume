@@ -48,13 +48,15 @@
                :task (do (run 'yaml-to-edn)
                          (println "CTRL-C to quit...")
                          (fw/watch "." (fn [{:keys [type path] :as wtv}]
-                                         (println wtv)
-                                         (when (or
-                                                (= path "./resume.yaml")
-                                                (= (fs/extension path) "clj"))
+                                                 #_(println "Watcher: " wtv)
+                                                 (when (or
+                                                        (= path "./resume.yaml")
+                                                        (= (fs/extension path) "clj"))
 
-                                           (println path " changed.")
-                                           (run 'yaml-to-edn))) {:delay-ms 500})
+                                                   (println path " changed.")
+                                                   (run 'yaml-to-edn))) {
+                                                                 :recursive true
+                                                                         :delay-ms 500})
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
   watch-everything {:task (run '-watch-everything {:parallel true})}}}
