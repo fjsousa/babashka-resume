@@ -28,6 +28,10 @@ module.exports = {
             mega: "3.75rem"
 
         },
+        width: {
+            "44": "44.75rem",
+            "21": "21.25rem"
+        }
     },
     corePlugins: {
         preflight: false,
