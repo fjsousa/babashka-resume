@@ -48,13 +48,18 @@
 
    ;;had to remove the page limit: h-[112.5rem]
    [:div {:class
-          "relative bg-white w-full  overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-inter"}
+          "relative bg-white w-full  overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
 
     [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
+     (when-let [pic (:pic personal-info)]
+       [:img.rounded-full {:class "w-[12rem]" :src pic}])
+
      ;; NAME
-     [:b.self-stretch.relative.text-mega.leading-120.font-playfair-display
+     [:b.self-stretch.relative.text-mega.leading-120.font-roboto
       (:name personal-info)]
+
+
 
      ;;ADDRESS, EMAIL, ETC
      [:div.self-stretch.relative.leading-152

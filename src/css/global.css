@@ -9,3 +9,67 @@ body {
 ::after {
   border-width: 0;
 }
+
+/* @font-face { */
+/*     font-family: 'Roboto'; */
+/*     src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype'); */
+/*     font-weight: normal; */
+/*     font-style: normal; */
+/*     font-display: swap; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'Roboto'; */
+/*     src: url('/fonts/Roboto/Roboto-Italic.ttf') format('truetype'); */
+/*     font-weight: normal; */
+/*     font-style: italic; */
+/*     font-display: swap; */
+/* } */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* @font-face { */
+/*     font-family: 'Roboto'; */
+/*     src: url('/fonts/Roboto/Roboto-Thin.ttf') format('truetype'); */
+/*     font-weight: thin; */
+/*     font-style: normal; */
+/*     font-display: swap; */
+/* } */
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito/static/Nunito-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito/static/Nunito-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito/static/Nunito-Light.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+    font-display: swap;
+}
