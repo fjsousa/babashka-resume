@@ -53,6 +53,97 @@ experience:
       - Postgres
       - Kotlin
 
+  # Origin Rose
+  - title: Full-Stack developer
+    company: Momentum AI
+    location: Colorado (Remote)
+    dates:
+      - 01/08/2019
+      - 01/08/2021
+    achievements:
+      - Made a significant contribution in helping the initial consulting business transition into a successful remote sensing company.
+      - Frontend improvements - Drastically reduced the frontend build time by migrating to shadow-cljs and moving to a component-based architecture with devcards.
+      - Refactored the existing data model to enhance query efficiency of the timeseries sensor data.
+      - Fully owned a critical Elastic Search instance that monitored and alerted on the remote sensors in production.
+    technologies:
+      - Clojure and ClojureScript
+      - Reagent
+      - Re-Frame
+      - Postgres
+      - Timescale
+      - ElasticSearch
+
+  # Youview
+  - title: Cloud Services Engineer
+    company: Youview
+    location: London
+    dates:
+      - 01/10/2018
+      - 01/08/2019
+    achievements:
+      - As a valuable member of the Youview team, contributed to the set-top box provider for BT and TalkTalk, writing software in-house and serving requests for 2.6 million clients.
+      - Successfully reduced the AWS bill by responsibly consolidating a set of microservices, thereby optimizing the cloud infrastructure and reducing overall costs.
+      - Proactively identified and advocated for the refactoring of an overly fragmented set of microservices to improve efficiency,streamlining processes and enhancing overall service quality.
+    technologies:
+      - Node.js
+      - Clojure
+      - AWS
+      - Microservices
+
+  # funding circle
+  - title: Clojure Engineer
+    company: Funding Circle
+    location: London
+    dates:
+      - 01/05/2017
+      - 01/09/2018
+    achievements:
+      - Played a key role as part of the in-house team that migrated a legacy Ruby platform to a modern Clojure and Kafka stack at Funding Circle, enabling more efficient business loans for private and institutional investors.
+      - Volunteered as part of a crisis team for production issues on multiple occasions, demonstrating excellent problem-solving skills under pressure.
+      - Developed effective in-house tools to manage Kafka connections in development environments, contributing to the overall efficiency of the work processes.
+      - Collaborated remotely with teams located in Berlin and San Francisco, demonstrating effective communication and teamwork skills.
+    technologies:
+      - Clojure
+      - Kafka
+      - Docker
+      - Ruby
+      - Microservices
+
+  #style.com
+  - title: Software Engineer
+    company: Style.com
+    location: London
+    dates:
+      - 01/04/2015
+      - 01/05/2017
+    achievements:
+      - Worked collaboratively with a team of 30+ engineers and various contract partners to develop a green field e-commerce marketplace for Condé Naste. The marketplace aggregated data feeds from several brands with AI curation.
+      - Proactively took the initiative to learn new languages, including Clojure and Lua
+      - Released several stages of the online store, delivering high-value solutions to our clients.
+      - Contributed significantly by designing and implementing an Nginx/Lua solution to ease the pre-launch process and improve infrastructure.
+      - Worked with different teams including the API team, marketing team,and backend services team, specifically with ingesting product feeds.
+    technologies:
+      - Clojure/Clojurescript
+      - Node.js
+      - Docker
+      - NGINX/Lua/OpenResty
+
+  # freelancing
+  - title: Independent Full-Stack freelancer
+    location: Lisbon
+    dates:
+      - 01/03/2014
+      - 01/04/2015
+    achievements:
+      - Was responsible for finding my own clients and closing deals.
+      - Oversaw all stages of the projects, including gathering requirements, presenting quotes, development, deployment, and infrastructure management.
+      - Contributed to the early stage launch of products, which are still live as of 2023.
+      - Worked with a diverse range of cutting-edge technologies.
+    technologies:
+      - Ruby on Rails
+      - Node.js
+      - Shopify
+
   # CROWDPROCESS
   - title: Application Developer
     company: Crowdprocess
@@ -125,6 +216,7 @@ aws:
   - Step Functions
   - Cloudformation
   - DynamoDB
+  - X-ray
 
 devops:
   - Cloudformation
