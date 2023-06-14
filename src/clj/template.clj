@@ -59,13 +59,17 @@
      [:b.self-stretch.relative.text-mega.leading-120.font-roboto
       (:name personal-info)]
 
-
-
      ;;ADDRESS, EMAIL, ETC
      [:div.self-stretch.relative.leading-152
       [:p.m-0 (:email personal-info)]
       [:p.m-0 (:phone personal-info)]
-      [:p.m-0 (:address personal-info)]]
+      [:p.m-0 (:address personal-info)]
+
+      ;;linkedin
+      (when-let [{:keys [url name]} (:linkedin personal-info)]
+        [:p.m-0.flex.items-center name [:a.decoration-none.inline-flex
+                      {:href url :target "_blank" :class "w-[1rem]"}
+                      [:img.w-full {:src "/link.svg"}]]])]
 
      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 

@@ -5,6 +5,9 @@ personal-info:
   phone: [PHONE REDACTED]
   address: London
   pic: /marvila.jpeg
+  linkedin:
+    url: https://linkedin.com/in/fjsousa
+    name: linkedin.com/in/fjsousa
 
 # Summary or Objective
 summary:
