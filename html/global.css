@@ -124,6 +124,10 @@
   width: 44.75rem;
 }
 
+.w-\[12rem\] {
+  width: 12rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -172,6 +176,10 @@
   overflow: hidden;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -189,12 +197,12 @@
   text-align: right;
 }
 
-.font-inter {
-  font-family: Inter;
+.font-nunito {
+  font-family: Nunito;
 }
 
-.font-playfair-display {
-  font-family: 'Playfair Display';
+.font-roboto {
+  font-family: Roboto;
 }
 
 .text-3xl {
@@ -276,4 +284,106 @@ body {
 ::before,
 ::after {
   border-width: 0;
+}
+
+/* @font-face { */
+
+/*     font-family: 'Roboto'; */
+
+/*     src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype'); */
+
+/*     font-weight: normal; */
+
+/*     font-style: normal; */
+
+/*     font-display: swap; */
+
+/* } */
+
+/* @font-face { */
+
+/*     font-family: 'Roboto'; */
+
+/*     src: url('/fonts/Roboto/Roboto-Italic.ttf') format('truetype'); */
+
+/*     font-weight: normal; */
+
+/*     font-style: italic; */
+
+/*     font-display: swap; */
+
+/* } */
+
+@font-face {
+  font-family: 'Roboto';
+
+  src: url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+
+  font-weight: bold;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+/* @font-face { */
+
+/*     font-family: 'Roboto'; */
+
+/*     src: url('/fonts/Roboto/Roboto-Thin.ttf') format('truetype'); */
+
+/*     font-weight: thin; */
+
+/*     font-style: normal; */
+
+/*     font-display: swap; */
+
+/* } */
+
+@font-face {
+  font-family: 'Nunito';
+
+  src: url('/fonts/Nunito/static/Nunito-Regular.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+
+  src: url('/fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
+
+  font-weight: bold;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+
+  src: url('/fonts/Nunito/static/Nunito-Italic.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+
+  src: url('/fonts/Nunito/static/Nunito-Light.ttf') format('truetype');
+
+  font-weight: light;
+
+  font-style: normal;
+
+  font-display: swap;
 }

@@ -9,8 +9,8 @@ module.exports = {
                 gray: "#111",
             },
             fontFamily: {
-                inter: "Inter",
-                "playfair-display": "'Playfair Display'",
+                roboto: "Roboto",
+                nunito: "Nunito"
             },
         },
         lineHeight: {
