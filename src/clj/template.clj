@@ -20,6 +20,28 @@
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Playfair Display:wght@700&display=swap"}]
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
 
+(defn experience-hiccup
+  [{:keys [title company dates description achievements technologies] :as experience-entry}]
+  [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
+
+   [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
+
+    [:b.flex-1.relative.leading-148
+
+     (format "%s at %s" title company)]
+
+    ;;dates
+    (when dates
+      [:div.relative.text-base.leading-148.font-medium.text-dimgray
+       (format "%s - %s" (->short-date (first dates)) (->short-date (last dates)))])]
+
+   ;;description
+   [:div.relative.text-lg.leading-120.inline-block.w-44
+
+    [:p description]
+    [:ul (map (fn [item] [:li item]) achievements)]
+    [:p (interpose " - " technologies)]]])
+
 (defn template [{:keys [personal-info skills toolbox summary education experience
                         awards papers] :as resume-data}]
   [:html (head)
@@ -168,34 +190,33 @@
 
        ;;EXPERIENCE
        [:b.relative.text-5xl.inline-block.w-21
-
         "Experience"]
 
-       (map (fn [experience-entry]
-              [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
+       ;; GROUP
+       (when-let [group-exp (first (filter (comp #{"group"} :type) experience))]
+         (let [{:keys [title
+                       company
+                       dates
+                       entries]} group-exp
+               from (->short-date (first dates))
+               to (if (= 2 (count dates))
+                    (->short-date (second dates))
+                    "Present")]
+           [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
+            [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
+             [:b.flex-1.relative.leading-148
+              (format "%s at %s" title company)]
 
-               [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
+             ;;dates
+             [:div.relative.text-base.leading-148.font-medium.text-dimgray
+              (format " %s - %s" from to)]]
 
-                [:b.flex-1.relative.leading-148
+            ;;description
+            (map experience-hiccup entries)]))
 
-                 (format "%s at %s"
-                         (:title experience-entry)
-                         (:company experience-entry))]
-                ;;dates
-                [:div.relative.text-base.leading-148.font-medium.text-dimgray
+       (map experience-hiccup (filter (comp not #{"group"} :type) experience))])
 
-                 (str (->short-date (first (:dates experience-entry)))
-                      " - "
-                      (->short-date (last (:dates experience-entry))))]]
 
-               ;;description
-               [:div.relative.text-lg.leading-120.inline-block.w-44
-
-                [:p (:description experience-entry)]
-                [:ul (map (fn [item] [:li item]) (:achievements experience-entry))]
-                [:p (interpose " - " (:technologies experience-entry))]]])
-
-            experience)])
      [:div
       {:class
        "self-stretch relative text-[1.13rem] leading-[148%] text-dimgray text-right"}
