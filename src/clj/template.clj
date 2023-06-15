@@ -40,11 +40,11 @@
 
 
     [:p description]
-    (into [:ul {:class "list-['-'] pl-[1.5rem]"}]
+    (into [:ul.list-dash {:class "pl-[1.5rem]"}]
           (conj (mapv (fn [item]
-                        [:li {:class "pl-[0.1rem] pb-[0.2rem]"} item])
+                        [:li.pl-s.pb-m item])
                       (drop-last achievements))
-                [:li {:class "pl-[0.1rem]"} (last achievements)]))
+                [:li.pl-s (last achievements)]))
 
     [:p.leading-148 {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
@@ -116,9 +116,9 @@
         [:p.m-0 "English (Advanced)"]]]]
 
      ;;papers
-     [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+     [:div.flex.flex-col.items-start.justify-start.gap-025
 
-      [:b.relative.leading-152.inline-block.w-21
+      [:b.relative.leading-152.inline-block.text-3xl
        "Research Papers"]
 
       [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
@@ -130,15 +130,19 @@
                [:a {:href doi :target "_blank"} "doi"]]) papers)]]
 
      ;;awards
-     [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+     [:div.flex.flex-col.items-start.justify-start.gap-025
 
-      [:b.relative.leading-152.inline-block.w-21
+      [:b.relative.leading-152.inline-block.text-3xl
        "Awards"]
 
-      [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
+      [:div.relative.text-xl.font-medium.inline-block.leading-110
 
-       (map (fn [item]
-              [:p.m-0 (str "- " item)]) awards)]]
+       (into [:ul.pl-0.list-dash {:class ""}]
+             (conj
+              (mapv (fn [item]
+                      [:li.pb-m.pl-s item])
+                    (drop-last awards))
+              [:li.pl-s (last awards)]))]]
 
      ;;Updated on ...
 

@@ -12,6 +12,13 @@ module.exports = {
                 roboto: "Roboto",
                 nunito: "Nunito"
             },
+            listStyleType: {
+                "dash": "'-'"
+            },
+            spacing: {
+                m: "0.3rem",
+                s: "0.2rem"
+            }
         },
         lineHeight: {
             "110": "110%",
