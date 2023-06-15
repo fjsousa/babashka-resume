@@ -144,6 +144,10 @@
   flex: 1 1 0%;
 }
 
+.list-\[\'-\'\] {
+  list-style-type: '-';
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -201,6 +205,22 @@
   padding: 8.25rem;
 }
 
+.pl-\[0\.1rem\] {
+  padding-left: 0.1rem;
+}
+
+.pb-\[0\.1rem\] {
+  padding-bottom: 0.1rem;
+}
+
+.pb-\[0\.2rem\] {
+  padding-bottom: 0.2rem;
+}
+
+.pl-\[1\.5rem\] {
+  padding-left: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -247,6 +267,10 @@
 
 .font-medium {
   font-weight: 500;
+}
+
+.leading-110 {
+  line-height: 110%;
 }
 
 .leading-120 {
@@ -398,4 +422,9 @@ body {
   font-style: normal;
 
   font-display: swap;
+}
+
+.before\:pl-\[0\.1rem\]::before {
+  content: var(--tw-content);
+  padding-left: 0.1rem;
 }
