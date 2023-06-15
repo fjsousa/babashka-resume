@@ -36,69 +36,69 @@ education:
 # Work Experience
 experience:
 
-  - title: Contractor
-    type: group
-    company: CodeCadre
-    dates:
-      - 01/08/2019
-    entries:
-      - title: Clojure contractor
-        company: Awaze
-        location: Manchester
-        dates:
-          - 01/08/2022
-          - 01/12/2022
-        description:
-          As a Clojure contractor for Awaze, I was placed in a team that was implementing a unified search API across multiple holiday rental businesses. All code was produced alongside the team while ”mobbing”.
-        achievements:
-          - Spoke about the workflow methodology at a conference
-          - Made several critical contributions that helped speed up delivery
-          - Mentored new members of the team and conducted regular Friday afternoon Clojure practice sessions
-          - Successfully Identified bottlenecks with a custom lightweight tool
-          - Taught Clojure best practices to the rest of the team
-        technologies:
-          - Clojure
-          - AWS
-          - Postgres
-          - Kotlin
+#   - title: Contractor
+  #   type: group
+  #   company: CodeCadre
+  #   dates:
+  #     - 01/08/2019
+  #   entries:
+  #     - title: Clojure contractor
+  #       company: Awaze
+  #       location: Manchester
+  #       dates:
+  #         - 01/08/2022
+  #         - 01/12/2022
+  #       description:
+  #         As a Clojure contractor for Awaze, I was placed in a team that was implementing a unified search API across multiple holiday rental businesses. All code was produced alongside the team while ”mobbing”.
+  #       achievements:
+  #         - Spoke about the workflow methodology at a conference
+  #         - Made several critical contributions that helped speed up delivery
+  #         - Mentored new members of the team and conducted regular Friday afternoon Clojure practice sessions
+  #         - Successfully Identified bottlenecks with a custom lightweight tool
+  #         - Taught Clojure best practices to the rest of the team
+  #       technologies:
+  #         - Clojure
+  #         - AWS
+  #         - Postgres
+  #         - Kotlin#
 
-  # Origin Rose
-      - title: Full-Stack developer
-        company: Momentum AI
-        location: Colorado (Remote)
-        dates:
-          - 01/08/2019
-          - 01/08/2021
-        achievements:
-          - Made a significant contribution in helping the initial consulting business transition into a successful remote sensing company.
-          - Frontend improvements - Drastically reduced the frontend build time by migrating to shadow-cljs and moving to a component-based architecture with devcards.
-          - Refactored the existing data model to enhance query efficiency of the timeseries sensor data.
-          - Fully owned a critical Elastic Search instance that monitored and alerted on the remote sensors in production.
-        technologies:
-          - Clojure and ClojureScript
-          - Reagent
-          - Re-Frame
-          - Postgres
-          - Timescale
-          - ElasticSearch
+  # # Origin Rose
+  #     - title: Full-Stack developer
+  #       company: Momentum AI
+  #       location: Colorado (Remote)
+  #       dates:
+  #         - 01/08/2019
+  #         - 01/08/2021
+  #       achievements:
+  #         - Made a significant contribution in helping the initial consulting business transition into a successful remote sensing company.
+  #         - Frontend improvements - Drastically reduced the frontend build time by migrating to shadow-cljs and moving to a component-based architecture with devcards.
+  #         - Refactored the existing data model to enhance query efficiency of the timeseries sensor data.
+  #         - Fully owned a critical Elastic Search instance that monitored and alerted on the remote sensors in production.
+  #       technologies:
+  #         - Clojure and ClojureScript
+  #         - Reagent
+  #         - Re-Frame
+  #         - Postgres
+  #         - Timescale
+  #         - ElasticSearch
 
       # independent work
-      - title: Independent freelancer
-        company:
-        location: Remote
-        description:
-          Between contracts I made several contributions under CodeCadre LTD.
-        achievements:
-          - Maintaining a free dataset and web UI of driving school pass rates.
-          - Acting as a tech advisor for multiple early-stage businesses.
-          - Avid learner - acquired multiple Coursera certificates on various topics.
-          - Mentoring individuals from low-income backgrounds.
-          - Speaking at tech conferences.
-        technologies:
-          - Clojure and ClojureScript
-          - Babashka
-          - Tailwind
-          - Cryptography
+  - title: Independent freelancer
+    company:
+    location: Remote
+    description:
+      Between contracts I made several contributions under CodeCadre LTD.
+    achievements:
+      - Maintaining a free dataset and web UI of driving school pass rates.
+      - Acting as a tech advisor for multiple early-stage businesses.
+      - Avid learner - acquired multiple Coursera certificates on various topics.
+      - Mentoring individuals from low-income backgrounds.
+      - Speaking at tech conferences.
+    technologies:
+      - Clojure and ClojureScript
+      - Babashka
+      - Tailwind
+      - Cryptography
 
 
   #AWAZE

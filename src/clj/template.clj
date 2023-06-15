@@ -163,8 +163,8 @@
       [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-25.text-xl
 
 
-       [:b.relative.text-5xl.inline-block.w-21
-
+       [:b.relative.text-5xl.inline-block.bg-black.text-white
+        {:class "px-[0.3rem]"}
         "Education"]]
 
       ;;Education
@@ -204,7 +204,8 @@
 
 
        ;;EXPERIENCE
-       [:b.relative.text-5xl.inline-block.w-21
+       [:b.relative.text-5xl.inline-block.bg-black.text-white
+        {:class "px-[0.3rem]"}
         "Experience"]
 
        ;; GROUP
