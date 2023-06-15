@@ -36,10 +36,16 @@
        (format "%s - %s" (->short-date (first dates)) (->short-date (last dates)))])]
 
    ;;description
-   [:div.relative.text-lg.leading-120.inline-block.w-44
+   [:div.relative.text-lg.leading-110.inline-block.w-44
+
 
     [:p description]
-    [:ul (map (fn [item] [:li item]) achievements)]
+    (into [:ul {:class "list-['-'] pl-[1.5rem]"}]
+          (conj (mapv (fn [item]
+                        [:li {:class "pl-[0.1rem] pb-[0.2rem]"} item])
+                      (drop-last achievements))
+                [:li {:class "pl-[0.1rem]"} (last achievements)]))
+
     [:p (interpose " - " technologies)]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
