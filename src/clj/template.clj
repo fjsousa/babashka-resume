@@ -46,7 +46,7 @@
                       (drop-last achievements))
                 [:li {:class "pl-[0.1rem]"} (last achievements)]))
 
-    [:p (interpose " - " technologies)]]])
+    [:p.leading-148 {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
                         awards papers] :as resume-data}]
