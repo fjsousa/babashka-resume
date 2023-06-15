@@ -205,16 +205,12 @@
   padding: 8.25rem;
 }
 
-.pl-\[0\.1rem\] {
-  padding-left: 0.1rem;
-}
-
-.pb-\[0\.1rem\] {
-  padding-bottom: 0.1rem;
-}
-
 .pb-\[0\.2rem\] {
   padding-bottom: 0.2rem;
+}
+
+.pl-\[0\.1rem\] {
+  padding-left: 0.1rem;
 }
 
 .pl-\[1\.5rem\] {
@@ -291,6 +287,10 @@
 
 .leading-\[148\%\] {
   line-height: 148%;
+}
+
+.tracking-\[4px\] {
+  letter-spacing: 4px;
 }
 
 .text-dimgray {
@@ -422,9 +422,4 @@ body {
   font-style: normal;
 
   font-display: swap;
-}
-
-.before\:pl-\[0\.1rem\]::before {
-  content: var(--tw-content);
-  padding-left: 0.1rem;
 }
