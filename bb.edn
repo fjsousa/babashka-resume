@@ -59,7 +59,7 @@
                                                         (= (fs/extension path) "clj"))
 
                                                    (println path " changed.")
-                                                   (run) 'yaml-to-html
+                                                   (run 'yaml-to-html)
                                                    (run 'to-pdf))) {
                                                                           :recursive true
                                                                           :delay-ms 500})

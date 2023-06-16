@@ -29,6 +29,11 @@ module.exports = {
             "152": "152.62%"
         },
         fontSize: {
+            body: "1.25rem",
+            body2: "1.13rem",
+            "h1": "1.5rem",
+            "h2": "1.38rem",
+            "h3": "1.25rem",/*body 1*/
             lg: "1.13rem",
             base: "1rem",
             xl: "1.25rem",

@@ -9,6 +9,8 @@ personal-info:
     url: https://linkedin.com/in/fjsousa
     name: linkedin.com/in/fjsousa
 
+languages: true
+
 # Summary or Objective
 summary:
   - Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.
