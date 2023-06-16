@@ -259,6 +259,18 @@
   font-size: 1rem;
 }
 
+.text-body {
+  font-size: 1.25rem;
+}
+
+.text-h1 {
+  font-size: 1.5rem;
+}
+
+.text-h2 {
+  font-size: 1.38rem;
+}
+
 .text-lg {
   font-size: 1.13rem;
 }
@@ -267,7 +279,11 @@
   font-size: 3.75rem;
 }
 
-.text-xl {
+.text-body2 {
+  font-size: 1.13rem;
+}
+
+.text-h3 {
   font-size: 1.25rem;
 }
 

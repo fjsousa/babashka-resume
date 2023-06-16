@@ -26,7 +26,7 @@
 
    [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
 
-    [:b.flex-1.relative.leading-148
+    [:b.flex-1.relative.leading-148.text-h2
 
      (if company
        (format "%s at %s" title company)
@@ -40,7 +40,7 @@
 
 
    ;;description
-   [:div.relative.text-lg.leading-110.inline-block.w-44
+   [:div.relative.text-body.leading-110.inline-block.w-44
 
 
     [:p description]
@@ -54,7 +54,7 @@
     [:p.leading-148.pl-xxl {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
-                        awards papers] :as resume-data}]
+                        awards papers languages] :as resume-data}]
   [:html (head)
 
    ;;had to remove the page limit: h-[112.5rem]
@@ -85,52 +85,47 @@
      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
       ;; Main skill
+      (into
+       [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+        [:b.relative.leading-152.inline-block.w-21.text-h2
+         "Main skills"]
 
-      [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+        (into
+         [:div.relative.text-body.leading-148.font-medium.inline-block.w-21]
+         (map (fn [skill]
+                [:p.m-0 skill]) skills))])
 
-       (when skills
-         [:b.relative.leading-152.inline-block.w-21
-          "Main skills"]
+      ;;Languages, databases, TOOLBOX
+      (when toolbox
+        [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+         [:b.relative.leading-152.inline-block.w-21.text-h2
+            "Toolbox"]
+         [:div.relative.text-body.leading-148.font-medium.inline-block.w-21
 
-        (when skills (into
-          [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21]
-
-          (map (fn [skill]
-                 [:p.m-0 skill]) skills))))]
-
-      ;;Languages, databases, etc
-      [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
-
-       (when toolbox
-         [:b.relative.leading-152.inline-block.w-21
-          "Toolbox"])
-
-       (when toolbox
-         [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
-
-          (map (fn [tool]
-                 [:p.m-0 tool]) toolbox)])]
+            (map (fn [tool]
+                   [:p.m-0 tool]) toolbox)]])
 
       ;;Human languages
 
-      [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
+      (when languages
+        [:div.w-21.flex.flex-col.items-start.justify-start.gap-025.text-h2
 
-       [:b {:class "relative leading-152 inline-block w-21"}
-        "Languages"]
+         [:b {:class "relative leading-152 inline-block w-21"}
+          "Languages"]
 
-       [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
+         [:div.relative.text-body.leading-148.font-medium.inline-block.w-21
 
-        [:p.m-0 "Spanish (Native)"]
-        [:p.m-0 "English (Advanced)"]]]]
+          [:p.m-0 "Portuguese (Native)"]
+          [:p.m-0 "English (Advanced)"]]])]
 
      ;;papers
      (when papers
        [:div.flex.flex-col.items-start.justify-start.gap-025
 
-        [:b.relative.leading-152.inline-block.text-3xl
+        [:b.relative.leading-152.inline-block.text-h2
          "Research Papers"]
 
-        [:div.relative.text-xl.font-medium.inline-block.leading-120
+        [:div.relative.text-body.font-medium.inline-block.leading-120
 
          (let [item-fn (fn [{:keys [title doi date]}]
                          [[:span (str title ", ")]
@@ -148,10 +143,10 @@
      (when awards
        [:div.flex.flex-col.items-start.justify-start.gap-025
 
-        [:b.relative.leading-152.inline-block.text-3xl
+        [:b.relative.leading-152.inline-block.text-h2
          "Awards"]
 
-        [:div.relative.text-xl.font-medium.inline-block.leading-120
+        [:div.relative.text-body.font-medium.inline-block.leading-120
 
          (into [:ul.pl-0.list-dash]
                (conj
@@ -178,11 +173,11 @@
         [:div])
 
       (when summary (map (fn [summary-paragraph]
-                           [:p summary-paragraph]) summary)))
+                           [:p.text-body summary-paragraph]) summary)))
 
      ;; Education
      (into
-      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-25.text-xl
+      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-25.text-h1
 
 
        (when education
@@ -198,7 +193,7 @@
 
              [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
 
-              [:b.flex-1.relative.leading-148
+              [:b.flex-1.relative.leading-148.text-h3
 
                (format "%s at %s"
                        (:degree education-entry)
@@ -210,7 +205,7 @@
                     " - "
                     (->short-date (last (:dates education-entry))))]]
 
-             [:div.relative.text-lg.leading-120.inline-block.w-44
+             [:div.relative.text-body2.leading-120.inline-block.w-44
 
               (apply str
                      (flatten
@@ -228,7 +223,7 @@
 
 
        ;;EXPERIENCE
-       [:b.relative.text-5xl.inline-block.bg-black.text-white.print
+       [:b.relative.text-h1.inline-block.bg-black.text-white.print
         {:class "px-[0.3rem]"}
         "Experience"]
 
@@ -244,7 +239,7 @@
                     "Present")]
            [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
             [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
-             [:b.flex-1.relative.leading-148
+             [:b.flex-1.relative.leading-148.text-h2
               (format "%s at %s" title company)]
 
              ;;dates
