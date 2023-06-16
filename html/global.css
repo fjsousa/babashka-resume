@@ -144,6 +144,10 @@
   width: 100%;
 }
 
+.w-\[19rem\] {
+  width: 19rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -170,6 +174,14 @@
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .gap-013 {
