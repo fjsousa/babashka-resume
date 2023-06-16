@@ -1,4 +1,4 @@
-{:paths ["src/clj"]
+{:paths ["src/clj" "src/cljs"]
  :pods {org.babashka/fswatcher {:version "0.0.3"}}
  :deps {org.babashka/http-server {:mvn/version "0.1.11"}
         org.babashka/cli {:mvn/version "0.2.23"}}
@@ -37,15 +37,20 @@
   beautify {:doc "pretty print html document."
             :task (shell "npx js-beautify --type html html/*.html -r -s 2 -d")}
 
-  yaml-to-edn {:doc "builds html/index.html"
-               :task (do (shell "bb -m yaml-to-edn")
-                         (run 'beautify))}
+  yaml-to-html {:doc "builds html/index.html"
+                ;;TODO rename
+                :task (do (shell "bb -m yaml-to-edn")
+                          (run 'beautify))}
+  to-pdf {:doc "prints to pdf"
+          :task (do (shell "npx nbb src/cljs/to_pdf.cljs")
+                    (shell "qpdf --empty --pages pdf/page-one.pdf pdf/page-two.pdf -- pdf/resume.pdf "))}
   watch-css {:doc "produces html/global.css"
              :task (shell "npx tailwindcss -i ./src/css/global.css -o ./html/global.css --watch")}
   watch-build {:requires ([pod.babashka.fswatcher :as fw]
                           [babashka.fs :as fs])
                :doc "Watches clj and yaml files and produces html/index.html."
-               :task (do (run 'yaml-to-edn)
+               :task (do (run 'yaml-to-html)
+                         (run 'to-pdf)
                          (println "CTRL-C to quit...")
                          (fw/watch "." (fn [{:keys [type path] :as wtv}]
                                                  #_(println "Watcher: " wtv)
@@ -54,9 +59,10 @@
                                                         (= (fs/extension path) "clj"))
 
                                                    (println path " changed.")
-                                                   (run 'yaml-to-edn))) {
-                                                                 :recursive true
-                                                                         :delay-ms 500})
+                                                   (run) 'yaml-to-html
+                                                   (run 'to-pdf))) {
+                                                                          :recursive true
+                                                                          :delay-ms 500})
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
   watch-everything {:task (run '-watch-everything {:parallel true})}}}

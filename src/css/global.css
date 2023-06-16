@@ -73,3 +73,17 @@ body {
     font-style: normal;
     font-display: swap;
 }
+
+@page
+{
+    size: A4 portrait;
+    margin: 0;
+}
+
+@media print {
+  .print {
+    background-color: black !important;
+    print-color-adjust: exact;
+    color: white !important;;
+  }
+}
