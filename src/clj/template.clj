@@ -79,12 +79,16 @@
 
     [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
-     (when-let [pic (:pic personal-info)]
-       [:img.rounded-full {:class "w-[12rem]" :src pic}])
+     [:div
+      (when-let [pic (:pic personal-info)]
+        [:img.rounded-full {:class "w-[12rem] mb-[2rem]" :src pic}])
 
-     ;; NAME
-     [:b.self-stretch.relative.text-name.leading-120.font-roboto
-      (:name personal-info)]
+      ;; NAME
+      [:b.self-stretch.relative.text-name.leading-120.font-roboto
+       (:name personal-info)]
+
+      (when-let [title (:title personal-info)]
+        [:p.font-reboto.text-h1 [:b title]])]
 
      ;;ADDRESS, EMAIL, ETC
      [:div.self-stretch.relative.leading-152

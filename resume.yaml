@@ -8,6 +8,7 @@ personal-info:
   linkedin:
     url: https://linkedin.com/in/fjsousa
     name: linkedin.com/in/fjsousa
+  title: Software Engineer
 
 languages: true
 
@@ -276,6 +277,7 @@ toolbox:
   - Lua (NGINX)
   - Tailwind
   - Postgres
+  - Elastic Search
   - Kafka
   - Git
   - Linux
