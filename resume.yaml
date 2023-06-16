@@ -314,7 +314,36 @@ papers:
     date: 01/01/2011
 
 certificates:
-  - title: Mind
-    url: https://etc.com
-  - title: algorithms
-  - title: etc
+  - title: "Think Again: How to Reason and Argue"
+    certificate: https://www.coursera.org/account/accomplishments/verify/BEX98SSBV3
+    place: Coursera
+    year: 2016
+  - title: Algorithms, part 1
+    certificate: https://www.coursera.org/learn/algorithms-part1
+    place: Coursera
+    year: 2017
+  - title: Vipassana 10 day meditation retreat
+    place: Chennai India
+    year: 2018
+  - title: Neural Networks and Deep Learning
+    certificate: https://www.coursera.org/account/accomplishments/certificate/836R9DDJYB96
+    place: Coursera
+    year: 2021
+  - title: "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization"
+    certificate: https://www.coursera.org/account/accomplishments/certificate/TE9TNEWECPAK
+    place: Coursera
+    year: 2021
+  - title: Synapses, Neurons and Brains
+    certificate: https://www.coursera.org/account/accomplishments/verify/QKJSFV8NJAUR
+    place: Coursera
+    year: 2021
+  - title: Build a Modern Computer from First Principles
+    certificate: https://www.coursera.org/account/accomplishments/verify/BPMW2VPAKPUX
+    place: Coursera
+    year: 2022
+  - title: Philosophy of Mind
+    place: DCE Oxford
+    year: 2022
+  - title: Seminars on Bitcoin
+    place: Chaincode labs
+    year: 2023
