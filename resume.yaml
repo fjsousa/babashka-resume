@@ -267,11 +267,12 @@ experience:
 # Skills
 skills:
   - Full-Stack
-  - Algorithms
-  - Blockchain
+  - Product
   - REPL
   - Figma
   - AWS
+  - Algorithms
+  - Blockchain
 
 # languages and frameworks
 toolbox:
@@ -286,6 +287,7 @@ toolbox:
   - Postgres
   - Elastic Search
   - Kafka
+  - Datomic
   - Git
   - Linux
 
