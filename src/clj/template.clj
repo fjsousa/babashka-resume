@@ -76,7 +76,7 @@
 
    ;;had to remove the page limit: h-[112.5rem]
    [:div {:class
-          "relative bg-white w-full  overflow-hidden flex flex-row p-[8.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
+          "relative bg-white w-full  overflow-hidden flex flex-row p-[7.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
 
     [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
@@ -85,24 +85,26 @@
         [:img.rounded-full {:class "w-[12rem] mb-[2rem]" :src pic}])
 
       ;; NAME
-      [:b.self-stretch.relative.text-name.leading-120.font-roboto
-       (:name personal-info)]
+      (when personal-info
+        [:b.self-stretch.relative.text-name.leading-120.font-roboto
+         (:name personal-info)])
 
       (when-let [title (:title personal-info)]
         [:p.font-reboto.text-h1 [:b title]])]
 
      ;;ADDRESS, EMAIL, ETC
-     [:div.self-stretch.relative.leading-152
-      [:p.m-0 (:email personal-info)]
-      [:p.m-0 (:phone personal-info)]
-      [:p.m-0 (:address personal-info)]
+     (when personal-info
+       [:div.self-stretch.relative.leading-152
+        [:p.m-0 (:email personal-info)]
+        [:p.m-0 (:phone personal-info)]
+        [:p.m-0 (:address personal-info)]
 
-      ;;linkedin
-      (when-let [{:keys [url name]} (:linkedin personal-info)]
-        [:p.m-0.flex.items-center name
-         [:a.decoration-none.inline-flex
-          {:href url :target "_blank" :class "w-[1rem]"}
-          [:img.w-full {:src "/link.svg"}]]])]
+        ;;linkedin
+        (when-let [{:keys [url name]} (:linkedin personal-info)]
+          [:p.m-0.flex.items-center name
+           [:a.decoration-none.inline-flex
+            {:href url :target "_blank" :class "w-[1rem]"}
+            [:img.w-full {:src "/link.svg"}]]])])
 
      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
@@ -118,15 +120,16 @@
            (map (fn [tool]
                   [:p.m-0 tool]) toolbox)]])
        ;; Main skill
-       (into
-        [:div.flex.flex-col.items-start.justify-start.gap-025
-         [:b.relative.leading-152.inline-block.text-h2
-          "Main skills"]
-
+       (when skills
          (into
-          [:div.relative.text-body.leading-148.font-medium.inline-block]
-          (map (fn [skill]
-                 [:p.m-0 skill]) skills))])]
+          [:div.flex.flex-col.items-start.justify-start.gap-025
+           [:b.relative.leading-152.inline-block.text-h2
+            "Main skills"]
+
+           (into
+            [:div.relative.text-body.leading-148.font-medium.inline-block]
+            (map (fn [skill]
+                   [:p.m-0 skill]) skills))]))]
 
       ;;AWS
       (when aws
