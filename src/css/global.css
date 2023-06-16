@@ -87,3 +87,7 @@ body {
     color: white !important;;
   }
 }
+
+a.gray-link-box, svg {
+  stroke: #666;
+}

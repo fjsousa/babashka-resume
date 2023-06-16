@@ -263,6 +263,10 @@
   font-size: 1.25rem;
 }
 
+.text-body2 {
+  font-size: 1.13rem;
+}
+
 .text-h1 {
   font-size: 1.5rem;
 }
@@ -271,20 +275,16 @@
   font-size: 1.38rem;
 }
 
+.text-h3 {
+  font-size: 1.25rem;
+}
+
 .text-lg {
   font-size: 1.13rem;
 }
 
 .text-name {
   font-size: 3.75rem;
-}
-
-.text-body2 {
-  font-size: 1.13rem;
-}
-
-.text-h3 {
-  font-size: 1.25rem;
 }
 
 .font-medium {
@@ -469,4 +469,8 @@ body {
             print-color-adjust: exact;
     color: white !important;
   }
+}
+
+a.gray-link-box, svg {
+  stroke: #666;
 }

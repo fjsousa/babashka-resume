@@ -20,6 +20,22 @@
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Playfair Display:wght@700&display=swap"}]
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
 
+(def link-box
+  [:svg
+   {:stroke "#000000",
+    :fill "none",
+    :stroke-linejoin "round",
+    :width "800px",
+    :xmlns "http://www.w3.org/2000/svg",
+    :stroke-linecap "round",
+    :stroke-width "1.5",
+    :version "1.1",
+    :viewBox "0 0 16 16",
+    #_#_:height "800px"}
+   [:polyline
+    {:points "8.25 2.75,2.75 2.75,2.75 13.25,13.25 13.25,13.25 7.75"}]
+   [:path {:d "m13.25 2.75-5.5 5.5m3-6.5h3.5v3.5"}]])
+
 (defn experience-hiccup
   [{:keys [title company location dates description achievements technologies] :as experience-entry}]
   [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
@@ -54,7 +70,7 @@
     [:p.leading-148.pl-xxl {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
-                        awards papers languages] :as resume-data}]
+                        awards papers languages certificates] :as resume-data}]
   [:html (head)
 
    ;;had to remove the page limit: h-[112.5rem]
@@ -78,9 +94,10 @@
 
       ;;linkedin
       (when-let [{:keys [url name]} (:linkedin personal-info)]
-        [:p.m-0.flex.items-center name [:a.decoration-none.inline-flex
-                      {:href url :target "_blank" :class "w-[1rem]"}
-                      [:img.w-full {:src "/link.svg"}]]])]
+        [:p.m-0.flex.items-center name
+         [:a.decoration-none.inline-flex
+          {:href url :target "_blank" :class "w-[1rem]"}
+          [:img.w-full {:src "/link.svg"}]]])]
 
      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
@@ -154,6 +171,30 @@
                         [:li.pb-m.pl-s item])
                       (drop-last awards))
                 [:li.pl-s (last awards)]))]])
+
+     (when certificates
+       [:div.flex.flex-col.items-start.justify-start.gap-025
+
+        [:b.relative.leading-152.inline-block.text-h2
+         "Certificates"]
+
+        [:div.relative.text-body.font-medium.inline-block.leading-120
+
+         (let [item-fn (fn [{:keys [title certificate place year]}]
+                         [[:span title]
+                          [:span.items-center.flex
+                           [:span.text-dimgray.text-base (str place ", " year ". ")]
+                           [:a.decoration-none.inline-flex.gray-link-box
+                            {:href certificate :target "_blank" :class "w-[1rem]"}
+                            link-box]]])]
+           (into [:ul.pl-0.list-dash]
+                 (conj
+                  (mapv (fn [paper]
+                          (into
+                           [:li.pb-m.pl-s]
+                           (item-fn paper))) (drop-last certificates))
+                  (into [:li.pl-s] (item-fn (last certificates))))))]])
+
 
      ;;Updated on ...
 
