@@ -8,15 +8,15 @@ personal-info:
   linkedin:
     url: https://linkedin.com/in/fjsousa
     name: linkedin.com/in/fjsousa
-  title: Software Engineer
+  title: Clojure Full-Stack Developer
 
 languages: true
 
 # Summary or Objective
 summary:
-  - Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something for users. I have been writing Clojure since late 2015 and recently had the opportunity of sharing the joys of Clojure by mentoring more junior engineers.
-  - Over the years, I worked for different industries (e-commerce, fintech, TV, energy and holiday rentals) and with many technologies in the ecosystem (Reagent, Re-frame, Ring, Pedestal, Datomic, Babashka and others).
-  - I choose to work with Clojure because of the guarantees it gives me in a professional environment. Being a functional language with emphasis on immutability and an expressive standard library, I know I can find my way in any codebase. Being a Lisp gives it that extra sophistication touch. However, I do believe people solve problems not tools and so I’m always happy to work with other languages and have done so in the past. I feel comfortable touching any codebase in Typescript, Go, Kotlin, Python, Ruby and curious to try Erlang, Haskell and Rust.
+  - Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something for users. I have been writing Clojure since late 2015 and recently had the opportunity to share the joys of Clojure by mentoring more junior engineers.
+  - Over the years, I have worked for different industries (e-commerce, fintech, TV, energy, and holiday rentals) and with many technologies in the ecosystem (Reagent, Re-frame, Ring, Pedestal, Datomic, Babashka, and others).
+  #- I choose to work with Clojure because of the guarantees it gives me in a professional environment. Being a functional language with an emphasis on immutability and an expressive standard library, I know I can find my way in any codebase. Being a Lisp gives it that extra touch of sophistication. However, I do believe people solve problems, not tools, so I'm always happy to work with other languages and have done so in the past. I feel comfortable working with any codebase in Typescript, Go, Kotlin, Python, Ruby, and I am curious to try Erlang, Haskell, and Rust.
 
   # GENERIC
   # - Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.

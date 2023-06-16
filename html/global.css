@@ -148,6 +148,10 @@
   width: 100%;
 }
 
+.w-\[16rem\] {
+  width: 16rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
