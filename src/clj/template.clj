@@ -90,7 +90,7 @@
          (:name personal-info)])
 
       (when-let [title (:title personal-info)]
-        [:p.font-reboto.text-h1 [:b title]])]
+        [:p.font-reboto.text-h1 {:class "w-[16rem]"}[:b title]])]
 
      ;;ADDRESS, EMAIL, ETC
      (when personal-info
