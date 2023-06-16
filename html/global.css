@@ -136,6 +136,10 @@
   width: 12rem;
 }
 
+.w-\[16rem\] {
+  width: 16rem;
+}
+
 .w-\[19rem\] {
   width: 19rem;
 }
@@ -146,10 +150,6 @@
 
 .w-full {
   width: 100%;
-}
-
-.w-\[16rem\] {
-  width: 16rem;
 }
 
 .flex-1 {
@@ -265,6 +265,10 @@
 
 .text-5xl {
   font-size: 1.5rem;
+}
+
+.text-\[1\.13rem\] {
+  font-size: 1.13rem;
 }
 
 .text-base {

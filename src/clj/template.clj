@@ -71,12 +71,13 @@
     [:p.leading-148.pl-0 {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
-                        awards papers languages certificates aws] :as resume-data}]
+                        awards papers languages certificates aws
+                        source-code?] :as resume-data}]
   [:html (head)
 
    ;;had to remove the page limit: h-[112.5rem]
    [:div {:class
-          "relative bg-white w-full  overflow-hidden flex flex-row p-[7.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
+          "relative [112.5rem] bg-white w-full  overflow-hidden flex flex-row p-[7.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
 
     [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
@@ -205,9 +206,10 @@
                          [[:span title]
                           [:span.items-center.flex
                            [:span.text-dimgray.text-base (str place ", " year ". ")]
-                           [:a.decoration-none.inline-flex.gray-link-box
-                            {:href certificate :target "_blank" :class "w-[1rem]"}
-                            link-box]]])]
+                           (when certificate
+                             [:a.decoration-none.inline-flex.gray-link-box
+                              {:href certificate :target "_blank" :class "w-[1rem]"}
+                              link-box])]])]
            (into [:ul.pl-0.list-dash]
                  (conj
                   (mapv (fn [paper]
@@ -311,6 +313,11 @@
             ;;description
             (map experience-hiccup entries)]))
 
-       (map experience-hiccup (filter (comp not #{"group"} :type) experience))])]]
+       (map experience-hiccup (filter (comp not #{"group"} :type) experience))])
+     (when source-code?
+       [:div
+        {:class
+         "self-stretch relative text-[1.13rem] leading-[148%] text-dimgray text-right"}
+        [:a.text-inherit {:href "https://github.com/fjsousa/babashka-resume" :target "_blank"} "Source code"]])]]
    (when (not (System/getenv "RELEASE"))
      [:script {:src "live.js"}])])
