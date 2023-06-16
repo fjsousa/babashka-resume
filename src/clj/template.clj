@@ -59,15 +59,16 @@
    [:div.relative.text-body.leading-110.inline-block.w-44
 
 
+
     [:p description]
-    (into [:ul.list-dash.pl-xxl]
+    (into [:ul.list-dash.pl-0]
           (conj (mapv (fn [item]
                         [:li.pl-s.pb-m item])
                       (drop-last achievements))
                 [:li.pl-s (last achievements)]))
 
     ;;technologies
-    [:p.leading-148.pl-xxl {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
+    [:p.leading-148.pl-0 {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
                         awards papers languages certificates aws] :as resume-data}]

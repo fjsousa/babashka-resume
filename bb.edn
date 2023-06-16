@@ -61,8 +61,8 @@
                                                    (println path " changed.")
                                                    (run 'yaml-to-html)
                                                    (run 'to-pdf))) {
-                                                                          :recursive true
-                                                                          :delay-ms 500})
+                                                                    :recursive true
+                                                                    :delay-ms 500})
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
   watch-everything {:task (run '-watch-everything {:parallel true})}}}
