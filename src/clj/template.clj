@@ -105,26 +105,27 @@
 
      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
-      ;; Main skill
-      (into
-       [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
-        [:b.relative.leading-152.inline-block.w-21.text-h2
-         "Main skills"]
+      [:div.flex.flex-row.justify-between {:class "w-[19rem]"}
 
-        (into
-         [:div.relative.text-body.leading-148.font-medium.inline-block.w-21]
-         (map (fn [skill]
-                [:p.m-0 skill]) skills))])
+       ;;Languages, databases, TOOLBOX
+       (when toolbox
+         [:div.flex.flex-col.items-start.justify-start.gap-025
+          [:b.relative.leading-152.inline-block.text-h2
+           "Toolbox"]
+          [:div.relative.text-body.leading-148.font-medium.inline-block
 
-      ;;Languages, databases, TOOLBOX
-      (when toolbox
-        [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
-         [:b.relative.leading-152.inline-block.w-21.text-h2
-            "Toolbox"]
-         [:div.relative.text-body.leading-148.font-medium.inline-block.w-21
+           (map (fn [tool]
+                  [:p.m-0 tool]) toolbox)]])
+       ;; Main skill
+       (into
+        [:div.flex.flex-col.items-start.justify-start.gap-025
+         [:b.relative.leading-152.inline-block.text-h2
+          "Main skills"]
 
-            (map (fn [tool]
-                   [:p.m-0 tool]) toolbox)]])
+         (into
+          [:div.relative.text-body.leading-148.font-medium.inline-block]
+          (map (fn [skill]
+                 [:p.m-0 skill]) skills))])]
 
       ;;Human languages
 
