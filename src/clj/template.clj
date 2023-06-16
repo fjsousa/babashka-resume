@@ -21,32 +21,37 @@
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
 
 (defn experience-hiccup
-  [{:keys [title company dates description achievements technologies] :as experience-entry}]
+  [{:keys [title company location dates description achievements technologies] :as experience-entry}]
   [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
 
    [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
 
     [:b.flex-1.relative.leading-148
 
-     (format "%s at %s" title company)]
+     (if company
+       (format "%s at %s" title company)
+       title)]
 
     ;;dates
     (when dates
-      [:div.relative.text-base.leading-148.font-medium.text-dimgray
+      [:div.relative.text-base.font-medium.text-dimgray
        (format "%s - %s" (->short-date (first dates)) (->short-date (last dates)))])]
+   [:div.text-base.font-medium.text-dimgray.text-right location]
+
 
    ;;description
    [:div.relative.text-lg.leading-110.inline-block.w-44
 
 
     [:p description]
-    (into [:ul.list-dash {:class "pl-[1.5rem]"}]
+    (into [:ul.list-dash.pl-xxl]
           (conj (mapv (fn [item]
                         [:li.pl-s.pb-m item])
                       (drop-last achievements))
                 [:li.pl-s (last achievements)]))
 
-    [:p.leading-148 {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
+    ;;technologies
+    [:p.leading-148.pl-xxl {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
                         awards papers] :as resume-data}]
@@ -83,25 +88,28 @@
 
       [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
 
-       [:b.relative.leading-152.inline-block.w-21
-        "Main skills"]
+       (when skills
+         [:b.relative.leading-152.inline-block.w-21
+          "Main skills"]
 
-       (into
-        [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21]
+        (when skills (into
+          [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21]
 
-        (map (fn [skill]
-               [:p.m-0 skill]) skills))]
+          (map (fn [skill]
+                 [:p.m-0 skill]) skills))))]
 
       ;;Languages, databases, etc
       [:div.w-21.flex.flex-col.items-start.justify-start.gap-025
 
-       [:b.relative.leading-152.inline-block.w-21
-        "Toolbox"]
+       (when toolbox
+         [:b.relative.leading-152.inline-block.w-21
+          "Toolbox"])
 
-       [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
+       (when toolbox
+         [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
 
-        (map (fn [tool]
-               [:p.m-0 tool]) toolbox)]]
+          (map (fn [tool]
+                 [:p.m-0 tool]) toolbox)])]
 
       ;;Human languages
 
@@ -116,33 +124,41 @@
         [:p.m-0 "English (Advanced)"]]]]
 
      ;;papers
-     [:div.flex.flex-col.items-start.justify-start.gap-025
+     (when papers
+       [:div.flex.flex-col.items-start.justify-start.gap-025
 
-      [:b.relative.leading-152.inline-block.text-3xl
-       "Research Papers"]
+        [:b.relative.leading-152.inline-block.text-3xl
+         "Research Papers"]
 
-      [:div.relative.text-xl.leading-148.font-medium.inline-block.w-21
+        [:div.relative.text-xl.font-medium.inline-block.leading-120
 
-       (map (fn [{:keys [title doi date]}]
-              [:p.m-0
-               [:span (str "- "title ", ")]
-               [:span (str (->year date) ". ")]
-               [:a {:href doi :target "_blank"} "doi"]]) papers)]]
+         (let [item-fn (fn [{:keys [title doi date]}]
+                         [[:span (str title ", ")]
+                          [:span (str (->year date) ". ")]
+                          [:a.text-inherit {:href doi :target "_blank"} "doi"]])]
+           (into [:ul.pl-0.list-dash]
+                 (conj
+                  (mapv (fn [paper]
+                          (into
+                           [:li.pb-m.pl-s]
+                           (item-fn paper))) (drop-last papers))
+                  (into [:li.pb-m.pl-s] (item-fn (last papers))))))]])
 
      ;;awards
-     [:div.flex.flex-col.items-start.justify-start.gap-025
+     (when awards
+       [:div.flex.flex-col.items-start.justify-start.gap-025
 
-      [:b.relative.leading-152.inline-block.text-3xl
-       "Awards"]
+        [:b.relative.leading-152.inline-block.text-3xl
+         "Awards"]
 
-      [:div.relative.text-xl.font-medium.inline-block.leading-110
+        [:div.relative.text-xl.font-medium.inline-block.leading-120
 
-       (into [:ul.pl-0.list-dash {:class ""}]
-             (conj
-              (mapv (fn [item]
-                      [:li.pb-m.pl-s item])
-                    (drop-last awards))
-              [:li.pl-s (last awards)]))]]
+         (into [:ul.pl-0.list-dash]
+               (conj
+                (mapv (fn [item]
+                        [:li.pb-m.pl-s item])
+                      (drop-last awards))
+                [:li.pl-s (last awards)]))]])
 
      ;;Updated on ...
 
@@ -157,58 +173,62 @@
      ;; Summary
      (into
 
-      [:i.self-stretch.relative.leading-140]
+      (if summary
+        [:i.self-stretch.relative.leading-140]
+        [:div])
 
-      (map (fn [summary-paragraph]
-             [:p summary-paragraph]) summary))
+      (when summary (map (fn [summary-paragraph]
+                           [:p summary-paragraph]) summary)))
 
      ;; Education
      (into
       [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-25.text-xl
 
 
-       [:b.relative.text-5xl.inline-block.bg-black.text-white
-        {:class "px-[0.3rem]"}
-        "Education"]]
+       (when education
+         [:b.relative.text-5xl.inline-block.bg-black.text-white.print
+          {:class "px-[0.3rem]"}
+          "Education"])]
 
       ;;Education
-      [(map
-        (fn [education-entry]
-          [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
+      [(when education
+         (map
+          (fn [education-entry]
+            [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
 
-           [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
+             [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
 
-            [:b.flex-1.relative.leading-148
+              [:b.flex-1.relative.leading-148
 
-             (format "%s at %s"
-                     (:degree education-entry)
-                     (:university education-entry))]
+               (format "%s at %s"
+                       (:degree education-entry)
+                       (:university education-entry))]
 
-            [:div.relative.text-base.leading-148.font-medium.text-dimgray
+              [:div.relative.text-base.leading-148.font-medium.text-dimgray
 
-             (str (->short-date (first (:dates education-entry)))
-                  " - "
-                  (->short-date (last (:dates education-entry))))]]
+               (str (->short-date (first (:dates education-entry)))
+                    " - "
+                    (->short-date (last (:dates education-entry))))]]
 
-           [:div.relative.text-lg.leading-120.inline-block.w-44
+             [:div.relative.text-lg.leading-120.inline-block.w-44
 
-            (apply str
-                   (flatten
+              (apply str
+                     (flatten
 
-                    ;;activities
-                    [(when (:activities education-entry)
-                       (interpose ". " (:activities education-entry)))
+                      ;;activities
+                      [(when (:activities education-entry)
+                         (interpose ". " (:activities education-entry)))
 
-                     ". "
-                     ;;grades
-                     (when (:grade education-entry)
-                       ["Grade: " (:grade education-entry) "."])]))]])
-        education)
+                       ". "
+                       ;;grades
+                       (when (:grade education-entry)
+                         ["Grade: " (:grade education-entry) "."])]))]])
+          education))
 
 
 
        ;;EXPERIENCE
-       [:b.relative.text-5xl.inline-block.bg-black.text-white
+       [:b.relative.text-5xl.inline-block.bg-black.text-white.print
         {:class "px-[0.3rem]"}
         "Experience"]
 
@@ -234,13 +254,6 @@
             ;;description
             (map experience-hiccup entries)]))
 
-       (map experience-hiccup (filter (comp not #{"group"} :type) experience))])
-
-
-     [:div
-      {:class
-       "self-stretch relative text-[1.13rem] leading-[148%] text-dimgray text-right"}
-      "Learn more in my LinkedIn profile:"
-      [:span {:class "[text-decoration:underline]"} "in/username"]]]]
+       (map experience-hiccup (filter (comp not #{"group"} :type) experience))])]]
    (when (not (System/getenv "RELEASE"))
      [:script {:src "live.js"}])])
