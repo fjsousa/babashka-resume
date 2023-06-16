@@ -34,7 +34,7 @@ module.exports = {
             xl: "1.25rem",
             "3xl": "1.38rem",
             "5xl": "1.5rem",
-            mega: "3.75rem"
+            name: "3.75rem"
 
         },
         width: {

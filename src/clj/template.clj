@@ -67,7 +67,7 @@
        [:img.rounded-full {:class "w-[12rem]" :src pic}])
 
      ;; NAME
-     [:b.self-stretch.relative.text-mega.leading-120.font-roboto
+     [:b.self-stretch.relative.text-name.leading-120.font-roboto
       (:name personal-info)]
 
      ;;ADDRESS, EMAIL, ETC
