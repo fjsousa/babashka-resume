@@ -37,7 +37,10 @@
                                       :education
                                       :skills
                                       :toolbox
-                                      :aws)))))))
+                                      :aws
+                                      :personal-info
+                                      :languages
+                                      :skills)))))))
 
 
 
