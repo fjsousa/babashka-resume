@@ -18,7 +18,8 @@
 
     (spit destination-file (hiccup2/html
                             (template
-                             parsed-resume)))
+                             (assoc parsed-resume
+                                    :source-code? true))))
 
     ;;page one
     (spit page-one-html (hiccup2/html

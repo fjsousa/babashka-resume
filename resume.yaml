@@ -1,4 +1,6 @@
 # Personal Information
+live-link: https://cv.flaviosousa.co
+
 personal-info:
   name: Flávio Sousa
   email: [EMAIL REDACTED]
@@ -301,8 +303,8 @@ devops:
   - Terraform
 
 awards:
-  - Recognized as 2nd Place winner in the MSc. Category of the 2011 Fraunhofer Challenge, awarded for a practical research project.
-  - As a 2011 ISCTE-IUL MIT Startup Pitch Competition semi-finalist, contributed by performing a fluid flow simulation for a high altitude wind turbine project.
+  - Second Place winner in the MSc. Category of the 2011 Fraunhofer Challenge.
+  - Semi-finalist at a MIT backed Startup Pitch Competition.
 
 papers:
   - title: Faster Than Real Time Stochastic Fire Spread Simulations
