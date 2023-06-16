@@ -70,7 +70,7 @@
     [:p.leading-148.pl-xxl {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
-                        awards papers languages certificates] :as resume-data}]
+                        awards papers languages certificates aws] :as resume-data}]
   [:html (head)
 
    ;;had to remove the page limit: h-[112.5rem]
@@ -126,6 +126,18 @@
           [:div.relative.text-body.leading-148.font-medium.inline-block]
           (map (fn [skill]
                  [:p.m-0 skill]) skills))])]
+
+      ;;AWS
+      (when aws
+        (into
+         [:div.flex.flex-col.items-start.justify-start.gap-025
+          [:b.relative.leading-152.inline-block.text-h2
+           "AWS"]
+
+          (into
+           [:div.relative.text-body.leading-148.font-medium.inline-block]
+           (map (fn [item]
+                  [:p.m-0 item]) aws))]))
 
       ;;Human languages
 

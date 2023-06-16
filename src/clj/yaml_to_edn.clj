@@ -36,7 +36,8 @@
                               (dissoc :summary
                                       :education
                                       :skills
-                                      :toolbox)))))))
+                                      :toolbox
+                                      :aws)))))))
 
 
 
