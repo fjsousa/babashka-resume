@@ -25,7 +25,7 @@
     (spit page-one-html (hiccup2/html
                          (template
                           (-> parsed-resume
-                              (update :experience #(take 2 %))
+                              (update :experience #(take 4 %))
                               (dissoc :papers
                                       :certificates
                                       :awards
@@ -33,7 +33,8 @@
     (spit page-two-html (hiccup2/html
                          (template
                           (-> parsed-resume
-                              (update :experience #(subvec (vec %) 2))
+                              (update :experience #(subvec (vec %) 4))
+                              (assoc :page 2)
                               (dissoc :summary
                                       :education
                                       :skills
@@ -42,21 +43,3 @@
                                       :personal-info
                                       :languages
                                       :skills)))))))
-
-
-
-#_(defn watch
-    [& args]
-
-    (println "Watching current directory for changes... Press Ctrl-C to quit.")
-
-    (fw/watch "." (fn [{:keys [type path]}]
-                    (when (or
-                           (= path "./resume.yaml")
-                           (= (fs/extension path) "clj"))
-
-                      (println path " changed.")
-                      (-main))
-                    ) {:delay-ms 1000})
-
-    @(promise))

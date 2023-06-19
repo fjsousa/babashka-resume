@@ -6,7 +6,7 @@
 
 (def print-options
   {:preferCSSPageSize true ;;to set margin = 0
-   :scale 0.58
+   :scale 0.59
    :pageRanges "1"})
 
 (p/let [browser (.launch puppeteer #js {:headless true})
