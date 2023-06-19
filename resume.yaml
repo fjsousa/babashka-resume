@@ -30,26 +30,189 @@ summary:
 
 # Education
 education:
-  - degree: Msc. in Mechanical Engineering
+  - degree: MSc. in Mechanical Engineering
     university: University of Lisbon
     dates:
       - 01/09/2008
       - 01/06/2011
     activities:
-      - Course representative 2009/2010
+      - Course representative for 2009/2010
       - Worker student
     grade: A
 
-  - degree: Bsc. in Mechanical Engineering
+  - degree: BSc. in Mechanical Engineering
     university: University of Lisbon
     dates:
-    - 01/09/2004
-    - 01/09/2008
+      - 01/09/2004
+      - 01/09/2008
 
 # Work Experience
 experience:
+  # independent work
+  - title: Independent Freelancer
+    company: CodeCadre LTD
+    location: Remote
+    dates:
+      - 01/08/2019
+      - present
+    description: |
+      Between contracts, I made several contributions under CodeCadre LTD.
+    achievements:
+      - Maintained an open dataset of driving school pass rates and made other open-source contributions.
+      - Tech advisor for multiple early-stage businesses. Speaker at tech conferences.
+      - Mentored individuals from low-income backgrounds.
+    technologies:
+      - Clojure(Script)
+      - Babashka
+      - Tailwind
 
-#   - title: Contractor
+  # AWAZE
+  - title: Clojure Contractor
+    company: Awaze
+    location: Manchester (Remote)
+    dates:
+      - 01/08/2022
+      - 01/12/2022
+    achievements:
+      - Made several critical contributions that reduced delivery time by two months.
+      - Mentored new members of the team by conducting regular Friday afternoon Clojure practice sessions.
+      - Successfully identified bottlenecks with a custom profiling tool.
+    technologies:
+      - Clojure
+      - AWS
+      - Postgres
+      - Kotlin
+
+  - title: Career Break
+    dates:
+      - 01/08/2021
+      - 01/07/2022
+    description: |
+      Took time off to realign my skills with my interests. Made open-source contributions and acquired several certificates (see next page). Helped a non-profits organization with their web strategy.
+
+  # Origin Rose
+  - title: Clojure Contractor
+    company: Momentum AI
+    location: Colorado (Remote)
+    dates:
+      - 01/08/2019
+      - 01/08/2021
+    achievements:
+      - Helped the initial consulting business transition into a successful remote sensing company.
+      - Drastically reduced build time and overall frontend optimization with shadow-cljs and devcards.
+      - Fully owned a critical Elastic Search instance that monitored remote sensors in production.
+    technologies:
+      - Clojure(Script)
+      - Python
+      - Reagent
+      - Re-Frame
+      - Postgres
+      - Timescale
+      - ElasticSearch
+
+  # Youview
+  - title: Cloud Services Engineer
+    company: Youview
+    location: London
+    dates:
+      - 01/10/2018
+      - 01/08/2019
+    achievements:
+      - Successfully reduced the AWS bill by consolidating a set of microservices.
+      - Proactively identified and advocated for the refactoring of an overly fragmented set of microservices to improve efficiency.
+    technologies:
+      - Node.js
+      - Clojure
+      - AWS
+      - Microservices
+
+  # Funding Circle
+  - title: Clojure Engineer
+    company: Funding Circle
+    location: London
+    dates:
+      - 01/05/2017
+      - 01/09/2018
+    achievements:
+      - Volunteered as part of a crisis team for production issues on multiple occasions, demonstrating excellent problem-solving skills under pressure.
+      - Developed effective in-house tooling to manage Kafka connections in development environments.
+    technologies:
+      - Clojure
+      - Kafka
+      - Docker
+      - Ruby
+      - Microservices
+
+  # Style.com
+  - title: Software Engineer
+    company: Style.com
+    location: London
+    dates:
+      - 01/04/2015
+      - 01/05/2017
+    achievements:
+      - Contributed significantly by designing and implementing an Nginx/Lua solution to ease the pre-launch process.
+      - "Worked in different tech departments: API, marketing, and product ingest. Learned two new languages: Clojure and Lua."
+    technologies:
+      - Clojure/Clojurescript
+      - Node.js
+      - Docker
+      - NGINX/Lua/OpenResty
+
+  # Freelancing
+  - title: Independent Full-Stack Developer
+    location: Lisbon
+    dates:
+      - 01/03/2014
+      - 01/04/2015
+    achievements:
+      - Oversaw all stages of the projects, including finding clients, presenting quotes, gathering requirements, development, deployment, and infrastructure management.
+      - Contributed to the early stage launch of businesses that are still live as of 2023.
+    technologies:
+      - Ruby on Rails
+      - Node.js
+      - Shopify
+
+  # Crowdprocess
+  - title: Application Developer
+    company: Crowdprocess
+    location: Lisbon
+    dates:
+      - 01/03/2013
+      - 01/03/2014
+    achievements:
+      - Played a pivotal role as the third employee due to my academic background, conducting research and development of applications in collaboration with experts in several fields, including computer vision, neuroscience, bioinformatics, and genetic algorithms.
+      - Developed a forest-fire model based on original research.
+    technologies:
+      - Node.js
+      - Postgres
+      - C/C++
+      - Python
+      - AWS
+
+  # LASEF
+  - title: Research Assistant
+    company: University of Lisbon
+    location: Lisbon
+    dates:
+      - 01/02/2010
+      - 01/11/2012
+    achievements:
+      - Invited to work on funded research while studying, after volunteering at a fluid simulation lab several times.
+      #- Worked on computational fluids research projects during my masters and afterwards.
+      - Co-authored two papers with 28 citations as of 2023 and developed a GPU algorithm that achieved speed-ups of 200 times.
+      #- During my Master's coursework, I conducted basic research in a fluid simulation lab and earned a research grant for my dissertation.
+      #- Achieved speed-ups of 200 times by porting an open-source forest fire library written in C to GPUs.
+      #- Co-authored two papers with 28 citations as of 2023.
+      #- In September 2010, I secured an FCT research grant to conduct CFD analysis of high-speed trains and renewable energy cogeneration devices.
+    technologies:
+      - C
+      - CUDA
+      - Java
+      - StarCCM+
+      - Paraview
+
+#  - title: Contractor
   #   type: group
   #   company: CodeCadre
   #   dates:
@@ -94,170 +257,6 @@ experience:
   #         - Postgres
   #         - Timescale
   #         - ElasticSearch
-
-  # independent work
-  - title: Independent freelancer
-    company:
-    location: Remote
-    dates:
-      - 01/08/2019
-      - present
-    description:
-      Between contracts I made several contributions under CodeCadre LTD.
-    achievements:
-      - Maintaining an open dataset of driving school pass rates and other open-source contributions.
-      - Tech advisor for multiple early-stage businesses. Speaker at tech conferences. #
-      - Mentoring individuals from low-income backgrounds.
-
-    technologies:
-      - Clojure(Script)
-      - Babashka
-      - Tailwind
-
-  #AWAZE
-  - title: Clojure contractor
-    company: Awaze
-    location: Manchester (Remote)
-    dates:
-      - 01/08/2022
-      - 01/12/2022
-    achievements:
-      - Made several critical contributions that reduced delivery time in two months.
-      - Mentored new members of the team by conducting regular Friday afternoon Clojure practice sessions.
-      - Successfully Identified bottlenecks with a custom profiling tool.
-    technologies:
-      - Clojure
-      - AWS
-      - Postgres
-      - Kotlin
-
-  - title: Career Break
-    dates:
-      - 01/08/2021
-      - 01/07/2022
-    description:
-      - Took time off to realign my skills with my interests. Did open-source contributions and aquired several certificates (see next page). Helped non-profit with their web strategy.
-
-  # Origin Rose
-  - title: Clojure contractor
-    company: Momentum AI
-    location: Colorado (Remote)
-    dates:
-      - 01/08/2019
-      - 01/08/2021
-    achievements:
-      - Helping the initial consulting business transition into a successful remote sensing company.
-      - Drastically reduced build time and overall frontend optimization with shadow-cljs and devcards.
-      - Fully owned a critical Elastic Search instance that monitored remote sensors in production.
-    technologies:
-      - Clojure and ClojureScript
-      - Reagent
-      - Re-Frame
-      - Postgres
-      - Timescale
-      - ElasticSearch
-
-  # Youview
-  - title: Cloud Services Engineer
-    company: Youview
-    location: London
-    dates:
-      - 01/10/2018
-      - 01/08/2019
-    achievements:
-      - Successfully reduced the AWS bill by consolidating a set of microservices.
-      - Proactively identified and advocated for the refactoring of an overly fragmented set of microservices to improve efficiency.
-    technologies:
-      - Node.js
-      - Clojure
-      - AWS
-      - Microservices
-
-  # funding circle
-  - title: Clojure Engineer
-    company: Funding Circle
-    location: London
-    dates:
-      - 01/05/2017
-      - 01/09/2018
-    achievements:
-      - Volunteered as part of a crisis team for production issues on multiple occasions, demonstrating excellent problem-solving skills under pressure.
-      - Developed effective in-house tooling to manage Kafka connections in development environments.
-    technologies:
-      - Clojure
-      - Kafka
-      - Docker
-      - Ruby
-      - Microservices
-
-  #style.com
-  - title: Software Engineer
-    company: Style.com
-    location: London
-    dates:
-      - 01/04/2015
-      - 01/05/2017
-    achievements:
-      - Contributed significantly by designing and implementing an Nginx/Lua solution to ease the pre-launch process.
-      - "Worked in different tech departments: API, marketing and product ingest. Learned two new languages: Clojure and Lua."
-    technologies:
-      - Clojure/Clojurescript
-      - Node.js
-      - Docker
-      - NGINX/Lua/OpenResty
-
-  # freelancing
-  - title: Independent Full-Stack developer
-    location: Lisbon
-    dates:
-      - 01/03/2014
-      - 01/04/2015
-    achievements:
-      - Oversaw all stages of the projects, including finding clients, presenting quotes, gathering requirements, development, deployment, and infrastructure management.
-      - Contributed to the early stage launch of businesses, still live as of 2023.
-    technologies:
-      - Ruby on Rails
-      - Node.js
-      - Shopify
-
-  # CROWDPROCESS
-  - title: Application Developer
-    company: Crowdprocess
-    location: Lisbon
-    dates:
-      - 01/03/2013
-      - 01/03/2014
-    achievements:
-      - As the third employee, I played a pivotal role due to my academia background. Conducted research and development of applications in colaboration with experts in several fields, including computer vision, neuroscience, bioinformatics and genetic algorithms.
-      - Developed a forest-fire model from original research.
-    technologies:
-      - node.js
-      - Postgres
-      - C/C++
-      - Python
-      - AWS
-
-  # LASEF
-  - title: Research Assistant
-    company: University of Lisbon
-    location: Lisbon
-    dates:
-      - 01/02/2010
-      - 01/11/2012
-    achievements:
-      - Invited to work on funded research while studying, after volunteering at a fluid simulation lab several times.
-      #- Worked on computational fluids research projects during my masters and afterwards.
-      - Co-authored two papers with 28 citations as of 2023 and developed a GPU algorithm that achieved speed-ups of 200 times.
-      #- During my Master's coursework, I conducted basic research in a fluid simulation lab and earned a research grant for my dissertation.
-      #- Achieved speed-ups of 200 times by porting an open-source forest fire library written in C to GPUs.
-      #- Co-authored two papers with 28 citations as of 2023.
-      #- In September 2010, I secured an FCT research grant to conduct CFD analysis of high-speed trains and renewable energy cogeneration devices.
-    technologies:
-      - C
-      - CUDA
-      - Java
-      - StarCCM+
-      - Paraview
 
 # Skills
 skills:
