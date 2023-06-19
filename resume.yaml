@@ -179,7 +179,7 @@ experience:
       - 01/09/2018
     achievements:
       - Volunteered as part of a crisis team for production issues on multiple occasions, demonstrating excellent problem-solving skills under pressure.
-      - Developed effective in-house tools to manage Kafka connections in development environments.
+      - Developed effective in-house tooling to manage Kafka connections in development environments.
     technologies:
       - Clojure
       - Kafka
@@ -204,14 +204,14 @@ experience:
       - NGINX/Lua/OpenResty
 
   # freelancing
-  - title: Independent Full-Stack freelancer
+  - title: Independent Full-Stack developer
     location: Lisbon
     dates:
       - 01/03/2014
       - 01/04/2015
     achievements:
       - Oversaw all stages of the projects, including finding clients, presenting quotes, gathering requirements, development, deployment, and infrastructure management.
-      - Contributed to the early stage launch of businesses, which are still live as of 2023.
+      - Contributed to the early stage launch of businesses, still live as of 2023.
     technologies:
       - Ruby on Rails
       - Node.js
@@ -225,7 +225,7 @@ experience:
       - 01/03/2013
       - 01/03/2014
     achievements:
-      - As the third employee, played a pivotal role in conducting research and development of applications in colaboration with experts in several fields, including computer vision, neuroscience, bioinformatics and genetic algorithms.
+      - As the third employee, I played a pivotal role due to my academia background. Conducted research and development of applications in colaboration with experts in several fields, including computer vision, neuroscience, bioinformatics and genetic algorithms.
       - Developed a forest-fire model from original research.
     technologies:
       - node.js
@@ -242,7 +242,8 @@ experience:
       - 01/02/2010
       - 01/11/2012
     achievements:
-      - Worked on funded computational fluids research projects during my masters and afterwards.
+      - Invited to work on funded research while studying, after volunteering at a fluid simulation lab several times.
+      #- Worked on computational fluids research projects during my masters and afterwards.
       - Co-authored two papers with 28 citations as of 2023 and developed a GPU algorithm that achieved speed-ups of 200 times.
       #- During my Master's coursework, I conducted basic research in a fluid simulation lab and earned a research grant for my dissertation.
       #- Achieved speed-ups of 200 times by porting an open-source forest fire library written in C to GPUs.

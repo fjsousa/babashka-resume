@@ -201,7 +201,7 @@
        [:div.flex.flex-col.items-start.justify-start.gap-025
 
         [:b.relative.leading-152.inline-block.text-h2
-         "Certificates"]
+         "Training and certificates"]
 
         [:div.relative.text-body.font-medium.inline-block.leading-120
 
