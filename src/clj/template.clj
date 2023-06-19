@@ -273,13 +273,26 @@
       [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-25.text-h1
 
 
+       #_(when education
+           [:b.relative.text-5xl.inline-block.bg-black.text-white.print
+            {:class "px-[0.3rem]"}
+            "Education"])
+
+       (when-not (= 2 page)
+         [:b.relative.text-h1.inline-block.bg-black.text-white.print
+          {:class "px-[0.3rem]"}
+          "Experience"])]
+
+
+      [(map experience-hiccup (filter (comp not #{"group"} :type) experience))
+
        (when education
          [:b.relative.text-5xl.inline-block.bg-black.text-white.print
           {:class "px-[0.3rem]"}
-          "Education"])]
+          "Education"])
 
-      ;;Education
-      [(when education
+       ;;Education
+       (when education
          (map
           (fn [education-entry]
             [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
@@ -316,34 +329,12 @@
 
 
        ;;EXPERIENCE
-       (when-not (= 2 page)
+       #_(when-not (= 2 page)
          [:b.relative.text-h1.inline-block.bg-black.text-white.print
           {:class "px-[0.3rem]"}
           "Experience"])
 
-       ;; GROUP
-       (when-let [group-exp (first (filter (comp #{"group"} :type) experience))]
-         (let [{:keys [title
-                       company
-                       dates
-                       entries]} group-exp
-               from (->short-date (first dates))
-               to (if (= 2 (count dates))
-                    (->short-date (second dates))
-                    "Present")]
-           [:div.w-44.flex.flex-col.items-start.justify-start.gap-013
-            [:div.self-stretch.flex.flex-row.items-center.justify-start.gap-013
-             [:b.flex-1.relative.leading-148.text-h2
-              (format "%s at %s" title company)]
-
-             ;;dates
-             [:div.relative.text-base.leading-148.font-medium.text-dimgray
-              (format " %s - %s" from to)]]
-
-            ;;description
-            (map experience-hiccup entries)]))
-
-       (map experience-hiccup (filter (comp not #{"group"} :type) experience))])
+       #_(map experience-hiccup (filter (comp not #{"group"} :type) experience))])
      (when source-code?
        [:div
         {:class

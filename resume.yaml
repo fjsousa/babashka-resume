@@ -10,7 +10,8 @@ personal-info:
   linkedin:
     url: https://linkedin.com/in/fjsousa
     name: linkedin.com/in/fjsousa
-  title: Clojure Full-Stack Developer
+  #title: Clojure Full-Stack Developer
+  title: Full-Stack Developer
 
 languages: true
 
@@ -104,11 +105,11 @@ experience:
     technologies:
       - Clojure(Script)
       - Python
-      - Reagent
-      - Re-Frame
+#      - Reagent
+#      - Re-Frame
       - Postgres
       - Timescale
-      - ElasticSearch
+#      - ElasticSearch
 
   # Youview
   - title: Cloud Services Engineer
@@ -260,11 +261,13 @@ experience:
 skills:
   - Full-Stack
   - Product
-  - REPL
+  - Data Ingest
+  - Linux
+#  - REPL
   - Figma
   - AWS
   - Algorithms
-  - Blockchain
+#  - Blockchain
 
 toolbox:
   - Clojure(script)
@@ -273,12 +276,12 @@ toolbox:
   - C
   - CUDA/GPU
   - Node.js
-  - Lua (NGINX)
+#  - Lua (NGINX)
   - Tailwind
   - Postgres
-  - Elastic Search
-  - Kafka
-  - Datomic
+#  - Elastic Search
+#  - Kafka
+#  - Datomic
   - Git
   - Linux
 
@@ -322,10 +325,10 @@ tech-community:
     year: 2021
 
 certificates:
-  - title: "Think Again: How to Reason and Argue"
-    certificate: https://www.coursera.org/account/accomplishments/verify/BEX98SSBV3
-    place: Coursera
-    year: 2016
+#  - title: "Think Again: How to Reason and Argue"
+#    certificate: https://www.coursera.org/account/accomplishments/verify/BEX98SSBV3
+#    place: Coursera
+#    year: 2016
   - title: Algorithms, Part 1
     certificate: https://www.coursera.org/learn/algorithms-part1
     place: Coursera
@@ -349,9 +352,9 @@ certificates:
     certificate: https://www.coursera.org/account/accomplishments/verify/BPMW2VPAKPUX
     place: Coursera
     year: 2022
-  - title: Philosophy of Mind
-    place: DCE Oxford
-    year: 2022
-  - title: Seminars on Bitcoin
-    place: Chaincode Labs
-    year: 2023
+#  - title: Philosophy of Mind
+#    place: DCE Oxford
+#    year: 2022
+#  - title: Seminars on Bitcoin
+#    place: Chaincode Labs
+#    year: 2023
