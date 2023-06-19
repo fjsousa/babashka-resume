@@ -52,7 +52,7 @@
                :task (do (run 'yaml-to-html)
                          (run 'to-pdf)
                          (println "CTRL-C to quit...")
-                         (fw/watch "." (fn [{:keys [type path] :as wtv}]
+                         (fw/watch "src/clj/template.clj" (fn [{:keys [type path] :as wtv}]
                                                  #_(println "Watcher: " wtv)
                                                  (when (or
                                                         (= path "./resume.yaml")
@@ -60,8 +60,7 @@
 
                                                    (println path " changed.")
                                                    (run 'yaml-to-html)
-                                                   (run 'to-pdf))) {
-                                                                    :recursive true
+                                                   (run 'to-pdf))) {:recursive true
                                                                     :delay-ms 500})
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
