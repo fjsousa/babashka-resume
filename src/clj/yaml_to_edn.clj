@@ -25,18 +25,19 @@
     (spit page-one-html (hiccup2/html
                          (template
                           (-> parsed-resume
-                              (update :experience #(take 4 %))
-                              (dissoc :papers
+                              (update :experience #(take 5 %))
+                              (dissoc :education
+                                      :papers
                                       :certificates
                                       :awards
-                                      :papers)))))
+                                      :papers
+                                      :tech-community)))))
     (spit page-two-html (hiccup2/html
                          (template
                           (-> parsed-resume
-                              (update :experience #(subvec (vec %) 4))
+                              (update :experience #(subvec (vec %) 5))
                               (assoc :page 2)
                               (dissoc :summary
-                                      :education
                                       :skills
                                       :toolbox
                                       :aws
