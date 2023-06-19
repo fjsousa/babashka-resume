@@ -257,8 +257,6 @@ experience:
   #         - Postgres
   #         - Timescale
   #         - ElasticSearch
-
-# Skills
 skills:
   - Full-Stack
   - Product
@@ -268,10 +266,9 @@ skills:
   - Algorithms
   - Blockchain
 
-# languages and frameworks
 toolbox:
   - Clojure(script)
-  - Javascript
+  - JavaScript
   - Python
   - C
   - CUDA/GPU
@@ -290,32 +287,32 @@ aws:
   - EC2
   - Lambda
   - Step Functions
-  - Cloudformation
+  - CloudFormation
   - DynamoDB
   - X-ray
   - Cognito
 
 devops:
-  - Cloudformation
+  - CloudFormation
   - Terraform
 
 awards:
   - Second Place winner in the MSc. Category of the 2011 Fraunhofer Challenge.
-  - Semi-finalist at a MIT backed Startup Pitch Competition.
+  - Semi-finalist at an MIT-backed Startup Pitch Competition.
 
 papers:
   - title: Faster Than Real Time Stochastic Fire Spread Simulations
     date: 01/01/2013
     doi: https://doi.org/10.3970/cmes.2012.089.361
-  - title: Simulation of surface fire fronts using firelib and GPUs
+  - title: Simulation of Surface Fire Fronts Using Firelib and GPUs
     date: 01/12/2012
     doi: https://doi.org/10.1016/j.envsoft.2012.06.006
-  - title: Numerical Investigations on the Inter-Car-Gap Flow for a Generic High Speed Train
+  - title: Numerical Investigations on the Inter-Car-Gap Flow for a Generic High-Speed Train
     doi: http://dx.doi.org/10.4203/ccp.98.150
     date: 01/01/2011
 
 tech-community:
-  - title: Speaker at Babashka conf
+  - title: Speaker at Babashka Conf
     year: 2023
   - title: Speaker at Equal Experts Conference
     year: 2023
@@ -329,12 +326,12 @@ certificates:
     certificate: https://www.coursera.org/account/accomplishments/verify/BEX98SSBV3
     place: Coursera
     year: 2016
-  - title: Algorithms, part 1
+  - title: Algorithms, Part 1
     certificate: https://www.coursera.org/learn/algorithms-part1
     place: Coursera
     year: 2017
-  - title: Vipassana 10 day meditation retreat
-    place: Chennai India
+  - title: Vipassana 10-Day Meditation Retreat
+    place: Chennai, India
     year: 2018
   - title: Neural Networks and Deep Learning
     certificate: https://www.coursera.org/account/accomplishments/certificate/836R9DDJYB96
@@ -356,5 +353,5 @@ certificates:
     place: DCE Oxford
     year: 2022
   - title: Seminars on Bitcoin
-    place: Chaincode labs
+    place: Chaincode Labs
     year: 2023
