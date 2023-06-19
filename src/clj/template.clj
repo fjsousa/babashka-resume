@@ -63,11 +63,12 @@
 
 
     [:p description]
-    (into [:ul.list-dash.pl-0]
-          (conj (mapv (fn [item]
-                        [:li.pl-s.pb-m item])
-                      (drop-last achievements))
-                [:li.pl-s (last achievements)]))
+    (when achievements
+      (into [:ul.list-dash.pl-0]
+            (conj (mapv (fn [item]
+                          [:li.pl-s.pb-m item])
+                        (drop-last achievements))
+                  [:li.pl-s (last achievements)])))
 
     ;;technologies
     [:p.leading-148.pl-0 {:class "tracking-[4px]"} (interpose " - " (map str/upper-case technologies))]]])
