@@ -312,6 +312,16 @@ papers:
     doi: http://dx.doi.org/10.4203/ccp.98.150
     date: 01/01/2011
 
+tech-community:
+  - title: Speaker at Babashka conf
+    year: 2016
+  - title: Speaker at Equal Experts Conference
+    year: 2023
+    url: https://www.youtube.com/watch?v=j-7nOSaE4Tg
+  - title: Maintaining Open Pass Rates
+    url: https://passaprimeira.xyz/
+    year: 2021
+
 certificates:
   - title: "Think Again: How to Reason and Argue"
     certificate: https://www.coursera.org/account/accomplishments/verify/BEX98SSBV3

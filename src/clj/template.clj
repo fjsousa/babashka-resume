@@ -75,7 +75,8 @@
 (defn template [{:keys [personal-info skills toolbox summary education experience
                         awards papers languages certificates aws
                         source-code?
-                        page] :as resume-data}]
+                        page
+                        tech-community] :as resume-data}]
   [:html (head)
 
    ;;had to remove the page limit: h-[112.5rem]
@@ -159,6 +160,30 @@
 
           [:p.m-0 "Portuguese (Native)"]
           [:p.m-0 "English (Advanced)"]]])]
+
+     (when tech-community
+       [:div.flex.flex-col.items-start.justify-start.gap-025
+
+        [:b.relative.leading-152.inline-block.text-h2
+         "Tech comunnity"]
+
+        [:div.relative.text-body.font-medium.inline-block.leading-120
+
+         (let [item-fn (fn [{:keys [title url year]}]
+                         [[:span title]
+                          [:span.items-center.flex
+                           [:span.text-dimgray.text-base (str year ".")]
+                           (when url
+                             [:a.decoration-none.inline-flex.gray-link-box
+                              {:href url :target "_blank" :class "w-[1rem]"}
+                              link-box])]])]
+           (into [:ul.pl-0.list-dash]
+                 (conj
+                  (mapv (fn [item]
+                          (into
+                           [:li.pb-m.pl-s]
+                           (item-fn item))) (drop-last tech-community))
+                  (into [:li.pl-s] (item-fn (last tech-community))))))]])
 
      ;;papers
      (when papers
