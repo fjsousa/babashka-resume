@@ -16,11 +16,13 @@ languages: true
 
 # Summary or Objective
 summary:
-  - Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something for users. I have been writing Clojure since late 2015 and recently had the opportunity to share the joys of Clojure by mentoring more junior engineers.
-  - Over the years, I have worked for different industries (e-commerce, fintech, TV, energy, and holiday rentals) and with many technologies in the ecosystem (Reagent, Re-frame, Ring, Pedestal, Datomic, Babashka, and others).
+  #- Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something for users. I have been writing Clojure since late 2015 and recently had the opportunity to share the joys of Clojure by mentoring more junior engineers.
+  #- Over the years, I have worked for different industries (e-commerce, fintech, TV, energy, and holiday rentals) and with many technologies in the ecosystem (Reagent, Re-frame, Ring, Pedestal, Datomic, Babashka, and others).
   #- I choose to work with Clojure because of the guarantees it gives me in a professional environment. Being a functional language with an emphasis on immutability and an expressive standard library, I know I can find my way in any codebase. Being a Lisp gives it that extra touch of sophistication. However, I do believe people solve problems, not tools, so I'm always happy to work with other languages and have done so in the past. I feel comfortable working with any codebase in Typescript, Go, Kotlin, Python, Ruby, and I am curious to try Erlang, Haskell, and Rust.
 
   # GENERIC
+  - Full-stack developer with professional experience in Clojure(script), Javascript and Python. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.
+  - The bulk of my experience is with backend and data pipeline tools, however recently I've been enjoying building frontend with modern tools, such as React, Next.js, tailwind.
   # - Full-stack developer proficient in Clojure and ClojureScript. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.
   # - I began my career at a fluids' simulation lab, where I published a novel algorithm for forest fire simulation,  optimized for GPUs. In 2013 I joined the booming Lisbon startup scene and moved to London in 2015. I have hacked code for client demos and been a developer advocate for early stage startups, and also enjoyed working on well financed greenfield re-architectures. I believe people solve problems not tools, so I always look for the most effective solution. I tend to prioritize languages over frameworks, and I can write infrastructure as code when necessary.
   # - I set up Codecadre LTD for my contracting work in 2019. Besides software contracting, I’m available to work with NGOs and offer free mentoring for people from a low-income background.´
