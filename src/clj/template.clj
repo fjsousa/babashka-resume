@@ -3,9 +3,11 @@
 
 (defn ->short-date
   [date-string]
-  (.format
-   (java.time.LocalDate/parse (str/join "-" (reverse (str/split date-string #"/"))))
-   (java.time.format.DateTimeFormatter/ofPattern "MMM yyyy")))
+  (if (= "present" date-string)
+    "Present"
+    (.format
+     (java.time.LocalDate/parse (str/join "-" (reverse (str/split date-string #"/"))))
+     (java.time.format.DateTimeFormatter/ofPattern "MMM yyyy"))))
 
 (defn ->year
   [date-string]
@@ -52,7 +54,7 @@
     (when dates
       [:div.relative.text-base.font-medium.text-dimgray
        (format "%s - %s" (->short-date (first dates)) (->short-date (last dates)))])]
-   [:div.text-base.font-medium.text-dimgray.text-right location]
+   [:div.text-base.font-medium.text-dimgray.text-right {:class "mt-[-0.4rem]"}location]
 
 
    ;;description
@@ -72,12 +74,13 @@
 
 (defn template [{:keys [personal-info skills toolbox summary education experience
                         awards papers languages certificates aws
-                        source-code?] :as resume-data}]
+                        source-code?
+                        page] :as resume-data}]
   [:html (head)
 
    ;;had to remove the page limit: h-[112.5rem]
    [:div {:class
-          "relative [112.5rem] bg-white w-full  overflow-hidden flex flex-row p-[7.25rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
+          "relative bg-white w-full  overflow-hidden flex flex-row p-[6.00rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
 
     [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
@@ -237,7 +240,7 @@
         [:div])
 
       (when summary (map (fn [summary-paragraph]
-                           [:p.text-body summary-paragraph]) summary)))
+                           [:p.text-body {:class "last:mb-0 first:mt-0"} summary-paragraph]) summary)))
 
      ;; Education
      (into
@@ -269,27 +272,28 @@
                     " - "
                     (->short-date (last (:dates education-entry))))]]
 
-             [:div.relative.text-body2.leading-120.inline-block.w-44
+             (when (:activities education-entry)
+               [:div.relative.text-body2.leading-120.inline-block.w-44
 
-              (apply str
-                     (flatten
+                (apply str
+                       (flatten
 
-                      ;;activities
-                      [(when (:activities education-entry)
-                         (interpose ". " (:activities education-entry)))
+                        ;;activities
+                        [(interpose ". " (:activities education-entry))
 
-                       ". "
-                       ;;grades
-                       (when (:grade education-entry)
-                         ["Grade: " (:grade education-entry) "."])]))]])
+                         ". "
+                         ;;grades
+                         (when (:grade education-entry)
+                           ["Grade: " (:grade education-entry) "."])]))])])
           education))
 
 
 
        ;;EXPERIENCE
-       [:b.relative.text-h1.inline-block.bg-black.text-white.print
-        {:class "px-[0.3rem]"}
-        "Experience"]
+       (when-not (= 2 page)
+         [:b.relative.text-h1.inline-block.bg-black.text-white.print
+          {:class "px-[0.3rem]"}
+          "Experience"])
 
        ;; GROUP
        (when-let [group-exp (first (filter (comp #{"group"} :type) experience))]

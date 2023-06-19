@@ -104,6 +104,10 @@
   margin-bottom: 2rem;
 }
 
+.mt-\[-0\.4rem\] {
+  margin-top: -0.4rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -222,8 +226,8 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.p-\[7\.25rem\] {
-  padding: 7.25rem;
+.p-\[6\.00rem\] {
+  padding: 6.00rem;
 }
 
 .px-\[0\.3rem\] {
@@ -489,4 +493,12 @@ body {
 
 a.gray-link-box, svg {
   stroke: #666;
+}
+
+.first\:mt-0:first-child {
+  margin-top: 0px;
+}
+
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
 }
