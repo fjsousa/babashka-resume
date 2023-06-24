@@ -43,9 +43,22 @@
                           (run 'beautify))}
   to-pdf {:doc "prints to pdf"
           :task (do (shell "npx nbb src/cljs/to_pdf.cljs")
+
                     (shell "qpdf --empty --pages pdf/page-one.pdf pdf/page-two.pdf -- pdf/resume.pdf "))}
-  watch-css {:doc "produces html/global.css"
-             :task (shell "npx tailwindcss -i ./src/css/global.css -o ./html/global.css --watch")}
+
+  build-css {:doc "produces html/global.css, accepts -m and --watch flags"
+             :task (apply shell "npx tailwindcss -i ./src/css/global.css -o ./html/global.css" *command-line-args*)}
+
+  hash-css-output {:doc "produces html/global-[content-hash].css once"
+                   :task (do (let [css-file-hash (subs (:out (shell {:out :string} "md5sum ./html/global.css")) 0 6)]
+                               (shell (format "mv ./html/global.css  ./html/global-%s.css" css-file-hash))))}
+
+  watch-css {:requires ([pod.babashka.fswatcher :as fw]
+                        [babashka.fs :as fs])
+             :doc "watch css"
+             :task (binding [*command-line-args* (list "--watch" "-m")]
+                     (run 'build-css))}
+
   watch-build {:requires ([pod.babashka.fswatcher :as fw]
                           [babashka.fs :as fs])
                :doc "Watches clj and yaml files and produces html/index.html."
@@ -53,15 +66,15 @@
                          (run 'to-pdf)
                          (println "CTRL-C to quit...")
                          (fw/watch "src/clj/template.clj" (fn [{:keys [type path] :as wtv}]
-                                                 #_(println "Watcher: " wtv)
-                                                 (when (or
-                                                        (= path "./resume.yaml")
-                                                        (= (fs/extension path) "clj"))
+                                                            #_(println "Watcher: " wtv)
+                                                            (when (or
+                                                                   (= path "./resume.yaml")
+                                                                   (= (fs/extension path) "clj"))
 
-                                                   (println path " changed.")
-                                                   (run 'yaml-to-html)
-                                                   (run 'to-pdf))) {:recursive true
-                                                                    :delay-ms 500})
+                                                              (println path " changed.")
+                                                              (run 'yaml-to-html)
+                                                              (run 'to-pdf))) {:recursive true
+                                                            :delay-ms 500})
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
   watch-everything {:task (run '-watch-everything {:parallel true})}}}
