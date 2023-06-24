@@ -15,12 +15,10 @@
    (java.time.LocalDate/parse (str/join "-" (reverse (str/split date-string #"/"))))
    (java.time.format.DateTimeFormatter/ofPattern "yyyy")))
 
-(defn head []
+(defn head [{:keys [css-filename]}]
   [:head
    [:meta {:charset "utf-8"}] [:meta {:name "viewport" :content "initial-scale=1, width=device-width"}]
-   [:link {:rel "stylesheet" :href "./global.css"}]
-   [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Playfair Display:wght@700&display=swap"}]
-   [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400&display=swap"}]])
+   [:link {:rel "stylesheet" :href css-filename}]])
 
 (def link-box
   [:svg
@@ -77,8 +75,8 @@
                         awards papers languages certificates aws
                         source-code?
                         page
-                        tech-community] :as resume-data}]
-  [:html (head)
+                        tech-community] :as resume-data} & [config]]
+  [:html (head config)
 
    ;;had to remove the page limit: h-[112.5rem]
    [:div {:class
@@ -114,28 +112,29 @@
 
      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
-      [:div.flex.flex-row.justify-between {:class "w-[19rem]"}
 
        ;;Languages, databases, TOOLBOX
-       (when toolbox
+
+      (when skills
+        (into
          [:div.flex.flex-col.items-start.justify-start.gap-025
           [:b.relative.leading-152.inline-block.text-h2
-           "Toolbox"]
-          [:div.relative.text-body.leading-148.font-medium.inline-block
+           "Main skills"]
 
-           (map (fn [tool]
-                  [:p.m-0 tool]) toolbox)]])
+          (into
+           [:div.relative.text-body.leading-148.font-medium.inline-block]
+           (map (fn [skill]
+                  [:p.m-0 skill]) skills))]))
+      (when toolbox
+        [:div.flex.flex-col.items-start.justify-start.gap-025
+         [:b.relative.leading-152.inline-block.text-h2
+          "Toolbox"]
+         [:div.relative.text-body.leading-148.font-medium.inline-block
+
+          (map (fn [tool]
+                 [:p.m-0 tool]) toolbox)]])
        ;; Main skill
-       (when skills
-         (into
-          [:div.flex.flex-col.items-start.justify-start.gap-025
-           [:b.relative.leading-152.inline-block.text-h2
-            "Main skills"]
 
-           (into
-            [:div.relative.text-body.leading-148.font-medium.inline-block]
-            (map (fn [skill]
-                   [:p.m-0 skill]) skills))]))]
 
       ;;AWS
       (when aws
@@ -168,7 +167,7 @@
         [:b.relative.leading-152.inline-block.text-h2
          "Tech community"]
 
-        [:div.relative.text-body.font-medium.inline-block.leading-120
+        [:div.relative.text-body.font-medium.inline-block.leading-110
 
          (let [item-fn (fn [{:keys [title url year]}]
                          [[:span title]
@@ -193,7 +192,7 @@
         [:b.relative.leading-152.inline-block.text-h2
          "Research Papers"]
 
-        [:div.relative.text-body.font-medium.inline-block.leading-120
+        [:div.relative.text-body.font-medium.inline-block.leading-110
 
          (let [item-fn (fn [{:keys [title doi date]}]
                          [[:span (str title ", ")]
@@ -214,7 +213,7 @@
         [:b.relative.leading-152.inline-block.text-h2
          "Awards"]
 
-        [:div.relative.text-body.font-medium.inline-block.leading-120
+        [:div.relative.text-body.font-medium.inline-block.leading-110
 
          (into [:ul.pl-0.list-dash]
                (conj
@@ -229,7 +228,7 @@
         [:b.relative.leading-152.inline-block.text-h2
          "Training and certificates"]
 
-        [:div.relative.text-body.font-medium.inline-block.leading-120
+        [:div.relative.text-body.font-medium.inline-block.leading-110
 
          (let [item-fn (fn [{:keys [title certificate place year]}]
                          [[:span title]

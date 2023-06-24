@@ -144,10 +144,6 @@
   width: 16rem;
 }
 
-.w-\[19rem\] {
-  width: 19rem;
-}
-
 .w-\[1rem\] {
   width: 1rem;
 }
@@ -182,10 +178,6 @@
 
 .justify-start {
   justify-content: flex-start;
-}
-
-.justify-between {
-  justify-content: space-between;
 }
 
 .gap-013 {
@@ -335,8 +327,8 @@
   line-height: 148%;
 }
 
-.tracking-\[4px\] {
-  letter-spacing: 4px;
+.tracking-\[10px\] {
+  letter-spacing: 10px;
 }
 
 .text-dimgray {

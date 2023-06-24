@@ -3,12 +3,23 @@
             [template :refer [template]]
             [hiccup2.core :as hiccup2]
             [pod.babashka.fswatcher :as fw]
-            [babashka.fs :as fs]))
+            [babashka.fs :as fs]
+            [clojure.java.io :as io]))
 
 (def source-file "resume.yaml")
 (def destination-file "html/index.html")
 (def page-one-html "html/page-one.html")
 (def page-two-html "html/page-two.html")
+
+
+(def latest-css
+  (subs (->> (io/file "html")
+             (.listFiles)
+             (filter #(.isFile %))
+             (sort-by #(.lastModified %))
+             (reverse)
+             (first)
+             str) 5))
 
 (defn -main
   [& args]
@@ -19,7 +30,8 @@
     (spit destination-file (hiccup2/html
                             (template
                              (assoc parsed-resume
-                                    :source-code? true))))
+                                    :source-code? true)
+                             {:css-filename latest-css})))
 
     ;;page one
     (spit page-one-html (hiccup2/html
@@ -31,7 +43,8 @@
                                       :certificates
                                       :awards
                                       :papers
-                                      :tech-community)))))
+                                      :tech-community))
+                          {:css-filename latest-css})))
     (spit page-two-html (hiccup2/html
                          (template
                           (-> parsed-resume
@@ -43,4 +56,5 @@
                                       :aws
                                       :personal-info
                                       :languages
-                                      :skills)))))))
+                                      :skills))
+                          {:css-filename latest-css})))))
