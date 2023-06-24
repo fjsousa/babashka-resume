@@ -16,6 +16,8 @@
   (subs (->> (io/file "html")
              (.listFiles)
              (filter #(.isFile %))
+             (filter #(#{".css"} (re-find #".css" (str %))))
+
              (sort-by #(.lastModified %))
              (reverse)
              (first)

@@ -77,4 +77,6 @@
                                                             :delay-ms 500})
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
-  watch-everything {:task (run '-watch-everything {:parallel true})}}}
+  watch-everything {:task (run '-watch-everything {:parallel true})}
+  deploy {:doc "rsync html folder shared host"
+          :task (shell "rsync -havz html/ hetzner:/usr/home/codecan/public_html/cv --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after")}}}
