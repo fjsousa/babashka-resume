@@ -26,7 +26,7 @@
    [:title "CV | flaviosousa.co"]
    [:link {:rel "stylesheet" :href css-filename}]
    [:script {:src "https://plausible.io/js/plausible.js"
-             :async "defer" :data-domain "flaviosousa.co"}]])
+             :async "defer" :data-domain "cv.flaviosousa.co"}]])
 
 (def link-box
   [:svg
