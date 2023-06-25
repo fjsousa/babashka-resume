@@ -19,8 +19,8 @@
   [:head
    [:meta {:charset "utf-8"}]
    [:meta {:content "width=device-width, initial-scale=1, maximum-scale=5" :name "viewport"}]
-   [:meta {:property "og:title" :content "CV | flaviosousa.co"}]
-   [:meta {:property "og:image" :content pic}]
+   [:meta {:property "og:title" :content "CV | Flávio Sousa"}]
+   [:meta {:property "og:image" :content "/og-pic.png"}]
    [:meta {:property "og:url" :content "https://cv.flaviosousa.co"}]
    [:link {:rel "canonical" :href "https://cv.flaviosousa.co"}]
    [:title "CV | flaviosousa.co"]
