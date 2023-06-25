@@ -58,6 +58,13 @@
              :doc "watch css"
              :task (binding [*command-line-args* (list "--watch" "-m")]
                      (run 'build-css))}
+  builds-everything-once {:task
+                          (do #_(shell "rm ./html/global*")
+                              (binding [*command-line-args* (list "-m")]
+                                (run 'build-css))
+                              (run 'hash-css-output)
+                              (run 'yaml-to-html)
+                              (run 'to-pdf))}
 
   watch-build {:requires ([pod.babashka.fswatcher :as fw]
                           [babashka.fs :as fs])
