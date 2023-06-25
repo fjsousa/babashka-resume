@@ -32,7 +32,8 @@
     (spit destination-file (hiccup2/html
                             (template
                              (assoc parsed-resume
-                                    :source-code? true)
+                                    :source-code? true
+                                    :web true)
                              {:css-filename latest-css})))
 
     ;;page one

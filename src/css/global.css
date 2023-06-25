@@ -84,8 +84,17 @@ body {
   .print {
     background-color: black !important;
     print-color-adjust: exact;
-    color: white !important;;
+    color: white !important;
   }
+
+  .print-show {
+    display: flex !important;
+  }
+
+  .print-hide {
+    display: none !important;
+  }
+
 }
 
 a.gray-link-box, svg {

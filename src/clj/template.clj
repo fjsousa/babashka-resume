@@ -15,10 +15,18 @@
    (java.time.LocalDate/parse (str/join "-" (reverse (str/split date-string #"/"))))
    (java.time.format.DateTimeFormatter/ofPattern "yyyy")))
 
-(defn head [{:keys [css-filename]}]
+(defn head [{:keys [css-filename]} pic]
   [:head
-   [:meta {:charset "utf-8"}] [:meta {:name "viewport" :content "initial-scale=1, width=device-width"}]
-   [:link {:rel "stylesheet" :href css-filename}]])
+   [:meta {:charset "utf-8"}]
+   [:meta {:content "width=device-width, initial-scale=1, maximum-scale=5" :name "viewport"}]
+   [:meta {:property "og:title" :content "CV | flaviosousa.co"}]
+   [:meta {:property "og:image" :content pic}]
+   [:meta {:property "og:url" :content "https://cv.flaviosousa.co"}]
+   [:link {:rel "canonical" :href "https://cv.flaviosousa.co"}]
+   [:title "CV | flaviosousa.co"]
+   [:link {:rel "stylesheet" :href css-filename}]
+   [:script {:src "https://plausible.io/js/plausible.js"
+             :async "defer" :data-domain "flaviosousa.co"}]])
 
 (def link-box
   [:svg
@@ -75,12 +83,19 @@
                         awards papers languages certificates aws
                         source-code?
                         page
-                        tech-community] :as resume-data} & [config]]
-  [:html (head config)
+                        tech-community
+                        web] :as resume-data} & [config]]
+  [:html (head config (:pic personal-info))
 
-   ;;had to remove the page limit: h-[112.5rem]
-   [:div {:class
-          "relative bg-white w-full  overflow-hidden flex flex-row p-[6.00rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito"}
+   (when web
+     [:div [:p.font-nunito {:class "xl:hidden"}
+            "HTML version for Desktop only. Please check out the " [:span [:a.text-inherit {:href "/resume.pdf"} "PDF version."]]]])
+   [:div
+    {:class
+     (str (if web
+        "hidden xl:flex"
+        "flex")
+          " relative bg-white w-full  overflow-hidden flex-row p-[6.00rem] box-border items-start justify-start gap-5 text-left text-lg text-gray font-nunito")}
 
     [:div.self-stretch.w-21.flex.flex-col.items-start.justify-start.gap-5
 
@@ -338,6 +353,7 @@
        [:div
         {:class
          "self-stretch relative text-[1.13rem] leading-[148%] text-dimgray text-right"}
+        [:a.text-inherit {:href "/resume.pdf" :target "_blank"} "PDF"] [:span " "]
         [:a.text-inherit {:href "https://github.com/fjsousa/babashka-resume" :target "_blank"} "Source code"]])]]
    (when (not (System/getenv "RELEASE"))
      [:script {:src "live.js"}])])
