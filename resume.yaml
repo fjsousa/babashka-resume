@@ -6,15 +6,15 @@ personal-info:
   email: [EMAIL REDACTED]
   phone: [PHONE REDACTED]
   address: London
-  #pic: /marvila.jpeg
+  pic: /marvila.jpeg
   linkedin:
     url: https://linkedin.com/in/fjsousa
     name: linkedin.com/in/fjsousa
   #title: Clojure Full-Stack Developer
   #title: Full-Stack Developer
   #title: Functional Language Developer
-  title: Software Engineer (Contractor)
-  #title: Software Engineer
+  #title: Software Engineer (Contractor)
+  title: Software Engineer
 
 languages: true
 
@@ -40,14 +40,14 @@ summary:
   #- I choose to work with Clojure because of the guarantees it gives me in a professional environment. Being a functional language with an emphasis on immutability and an expressive standard library, I know I can find my way in any codebase. Being a Lisp gives it that extra touch of sophistication. However, I do believe people solve problems, not tools, so I'm always happy to work with other languages and have done so in the past. I feel comfortable working with any codebase in Typescript, Go, Kotlin, Python, Ruby, and I am curious to try Erlang, Haskell, and Rust.
 
   # Somewhat GENERIC
-  - I am a full-stack developer with professional experience in Clojure(script), JavaScript, and Python. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.
-  - Recently, I spent two years working closely with founders and building a remote sensor data ingestion pipeline for AI detection of drilling issues.
+  #- I am a full-stack developer with professional experience in Clojure(script), JavaScript, and Python. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.
+  #- Recently, I spent two years working closely with founders and building a remote sensor data ingestion pipeline for AI detection of drilling issues.
   #- Recently, I spent two years building a remote sensor dashboard using reactive frameworks and I'm also competent building impeccable HTML and CSS pages.
 
 
   # Full Stack - generic
-  #- I am a full-stack developer with professional experience in Clojure(script), JavaScript, and Python. My ten-year-long career in web development has given me a solid understanding of how web technologies work. I work best with a team under constraints imposed by complex real-life problems.
-  #- The focus of my tech career has always been on determining the most effective way to apply technology to specific real-world use cases.
+  - I am a full-stack developer with professional experience in Clojure(script), JavaScript, and Python. My ten-year-long career in web development has given me a solid understanding of how web technologies work. I work best with a team under constraints imposed by complex real-life problems.
+  - The focus of my tech career has always been on determining the most effective way to apply technology to specific real-world use cases.
 
   #FUNCTIONAL
   #- I am an experienced full-stack developer proficient in Clojure(script), JavaScript, and Python. I have a strong passion for technology and a particular focus on leveraging functional languages to develop high-performance web services that prioritize concurrency and load handling.
@@ -93,7 +93,7 @@ experience:
       - Mentored individuals from low-income backgrounds.
     technologies:
       - Clojure(Script)
-      #- Babashka
+      - Babashka
       - Tailwind
       - Python
 
@@ -134,18 +134,18 @@ experience:
     achievements:
       - Full-stack Clojure monolith that ingested data for a neural net. #and displayed high-frequency data. # with Plotly.js.
       #- Helped the initial consulting business transition into a successful remote sensing company.
-      #- Drastically reduced build time and overall frontend optimization with shadow-cljs and devcards.
-      - Build time and other frontend optimization. # with shadow-cljs and devcards.
+      - Drastically reduced build time and overall frontend optimization with shadow-cljs and devcards.
+      #- Build time and other frontend optimization. # with shadow-cljs and devcards.
       - Fully owned an Elastic Search instance for remote sensor monitoring.
     technologies:
-      #- Plotly.js
+      - Plotly.js
       - Clojure(Script)
       - Python
-      #- Reagent
-      #- Re-Frame
-      #- Postgres
+      - Reagent
+      - Re-Frame
+      - Postgres
       - Timescale
-      #- ElasticSearch
+      - ElasticSearch
 
   # Youview
   - title: Cloud Services Engineer
@@ -226,7 +226,7 @@ experience:
     technologies:
       - Node.js
       - Postgres
-      #- Postgis
+      - Postgis
       - C/C++
       - Python
       - AWS
@@ -250,14 +250,14 @@ experience:
 
 skills:
   #- Full-Stack
-  - Product
+  #- Product
   - Web Technologies
-  - CI/CD
+  #- CI/CD
   - Storage Systems
   - Cloud Infrasctructure
   - Front-end Frameworks
-#  - Functional Lang.
-#  - Data Ingest
+  - Functional Lang.
+  #- Data Ingest
   #- Linux
   #- REPL
   - Figma
@@ -273,25 +273,25 @@ toolbox:
   - C
   - CUDA/GPU
   - Node.js
-#  - Lua (NGINX)
+  - Lua (NGINX)
   - Tailwind
   - Postgres
-#  - Elastic Search
-  #- Kafka
-  #- Datomic
+  - Elastic Search
+  - Kafka
+  - Datomic
   - Docker
   - Git
   - Linux
 
-#aws:
-#  - ECS
-#  - EC2
-#  - Lambda
-#  - Step Functions
-#  - CloudFormation
-#  - DynamoDB
-#  - X-ray
-#  - Cognito
+# aws:
+#   - ECS
+#   - EC2
+#   - Lambda
+#   - Step Functions
+#   - CloudFormation
+#   - DynamoDB
+#   - X-ray
+#   - Cognito
 
 devops:
   - CloudFormation
