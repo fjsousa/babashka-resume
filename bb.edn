@@ -1,5 +1,7 @@
 {:paths ["src/clj" "src/cljs"]
- :pods {org.babashka/fswatcher {:version "0.0.3"}}
+ :pods #_{org.babashka/fswatcher {:version "0.0.3"}}
+ {org.babashka/fswatcher {:path "/home/fsousa/src/pod-babashka-fswatcher/pod-babashka-fswatcher"
+                          :cache false}}
  :deps {org.babashka/http-server {:mvn/version "0.1.11"}
         org.babashka/cli {:mvn/version "0.2.23"}}
  :tasks
@@ -72,16 +74,15 @@
                :task (do (run 'yaml-to-html)
                          (run 'to-pdf)
                          (println "CTRL-C to quit...")
-                         (fw/watch "src/clj/template.clj" (fn [{:keys [type path] :as wtv}]
-                                                            #_(println "Watcher: " wtv)
-                                                            (when (or
-                                                                   (= path "./resume.yaml")
-                                                                   (= (fs/extension path) "clj"))
-
-                                                              (println path " changed.")
-                                                              (run 'yaml-to-html)
-                                                              (run 'to-pdf))) {:recursive true
-                                                            :delay-ms 500})
+                         (fw/watch "." (fn [{:keys [type path] :as ev}]
+                                         (when (or
+                                                (= path "./resume.yaml")
+                                                (= (fs/extension path) "clj"))
+                                           (println :building-after ev)
+                                           (run 'yaml-to-html)
+                                           (run 'to-pdf)))
+                                   {:recursive true
+                                    :delay-ms 50})
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
   watch-everything {:task (run '-watch-everything {:parallel true})}

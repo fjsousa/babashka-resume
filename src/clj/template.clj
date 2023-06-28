@@ -130,25 +130,29 @@
 
        ;;Languages, databases, TOOLBOX
 
-      (when skills
-        (into
+      [:div.flex.flex-row.justify-between {:class "w-[23rem]"}
+
+       (when toolbox
          [:div.flex.flex-col.items-start.justify-start.gap-025
           [:b.relative.leading-152.inline-block.text-h2
-           "Main skills"]
+           "Toolbox"]
+          [:div.relative.text-body.leading-148.font-medium.inline-block
 
-          (into
-           [:div.relative.text-body.leading-148.font-medium.inline-block]
-           (map (fn [skill]
-                  [:p.m-0 skill]) skills))]))
-      (when toolbox
-        [:div.flex.flex-col.items-start.justify-start.gap-025
-         [:b.relative.leading-152.inline-block.text-h2
-          "Toolbox"]
-         [:div.relative.text-body.leading-148.font-medium.inline-block
+           (map (fn [tool]
+                  [:p.m-0 tool]) toolbox)]])
 
-          (map (fn [tool]
-                 [:p.m-0 tool]) toolbox)]])
        ;; Main skill
+       (when skills
+         (into
+          [:div.flex.flex-col.items-start.justify-start.gap-025
+           [:b.relative.leading-152.inline-block.text-h2
+            "Main skills"]
+
+           (into
+            [:div.relative.text-body.leading-148.font-medium.inline-block]
+            (map (fn [skill]
+                   [:p.m-0 skill]) skills))]))]
+
 
 
       ;;AWS
