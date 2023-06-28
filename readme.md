@@ -26,7 +26,20 @@ bb dev
 
 Then [localhost:1337](http://localhost:1337)
 
+
 ## print to PDF
 
 
 `bb builds-everything-once` prints to `pdf/resume.pdf` using `Puppeteer`.
+
+## Watch
+
+```
+bb watch-everything
+```
+
+## Release
+
+```
+RELEASE=TRUE bb builds-everything-once
+```
