@@ -1,7 +1,5 @@
 {:paths ["src/clj" "src/cljs"]
- :pods #_{org.babashka/fswatcher {:version "0.0.3"}}
- {org.babashka/fswatcher {:path "/home/fsousa/src/pod-babashka-fswatcher/pod-babashka-fswatcher"
-                          :cache false}}
+ :pods {org.babashka/fswatcher {:version "0.0.5"}}
  :deps {org.babashka/http-server {:mvn/version "0.1.11"}
         org.babashka/cli {:mvn/version "0.2.23"}}
  :tasks
