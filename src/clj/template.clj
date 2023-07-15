@@ -89,7 +89,7 @@
 
    (when web
      [:div [:p.font-nunito {:class "xl:hidden p-[10px]"}
-            "HTML version for Desktop only. Please check out the " [:span [:a.text-inherit {:href "/resume.pdf"} "PDF version."]]]])
+            "HTML version for Desktop only. Please check out the " [:span [:a.text-inherit {:href "/resume.pdf?v=0.1"} "PDF version."]]]])
    [:div
     {:class
      (str (if web
