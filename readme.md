@@ -13,6 +13,13 @@ I used this [figma template](https://www.figma.com/community/file/12306703845250
 Then I turned the markup into Hiccup and used babashka tasks as a build tool.
 
 ## build
+The server needs to be running first:
+
+```
+bb dev
+```
+
+then,
 
 ```
 bb builds-everything-once
