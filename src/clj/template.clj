@@ -114,16 +114,26 @@
      ;;ADDRESS, EMAIL, ETC
      (when personal-info
        [:div.self-stretch.relative.leading-152
+
         [:p.m-0 (:email personal-info)]
-        [:p.m-0 (:phone personal-info)]
-        [:p.m-0 (:address personal-info)]
 
         ;;linkedin
         (when-let [{:keys [url name]} (:linkedin personal-info)]
           [:p.m-0.flex.items-center name
            [:a.decoration-none.inline-flex
             {:href url :target "_blank" :class "w-[1rem]"}
-            [:img.w-full {:src "/link.svg"}]]])])
+            [:img.w-full {:src "/link.svg"}]]])
+
+        ;;github
+        (when-let [{:keys [url name]} (:github personal-info)]
+          [:p.m-0.flex.items-center name
+           [:a.decoration-none.inline-flex
+            {:href url :target "_blank" :class "w-[1rem]"}
+            [:img.w-full {:src "/link.svg"}]]])
+
+        [:p.m-0 (:phone personal-info)]
+        [:p.m-0 (:address personal-info)]
+        ])
 
      [:div.self-stretch.flex-1.flex.flex-col.items-start.justify-start.gap-5.text-3xl
 
@@ -178,7 +188,8 @@
          [:div.relative.text-body.leading-148.font-medium.inline-block.w-21
 
           [:p.m-0 "Portuguese (Native)"]
-          [:p.m-0 "English (Advanced)"]]])]
+          [:p.m-0 "English (Native-like)"]
+          [:p.m-0 "Italian (Learning)"]]])]
 
      (when tech-community
        [:div.flex.flex-col.items-start.justify-start.gap-025
