@@ -85,4 +85,7 @@
   -watch-everything {:depends [watch-css watch-build]}
   watch-everything {:task (run '-watch-everything {:parallel true})}
   deploy {:doc "rsync html folder shared host"
-          :task (shell "rsync -havz html/ hetzner:/usr/home/codecan/public_html/cv --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after")}}}
+          :task (do (shell "cp pdf/resume.pdf html/resume.pdf")
+                    (shell "git add html/resume.pdf")
+                    (shell "git ci -m '[AUTOMATED] added resume.pdf to html folder'")
+                    (shell "rsync -havz html/ hetzner:/usr/home/codecan/public_html/cv --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after"))}}}
