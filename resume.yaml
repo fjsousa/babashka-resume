@@ -7,11 +7,15 @@ personal-info:
   phone: [PHONE REDACTED]
   address: London
   pic: /marvila.jpeg
+  github:
+    url: https://github.com/fjsousa/
+    name: github.com/fjsousa
   linkedin:
     url: https://linkedin.com/in/fjsousa
     name: linkedin.com/in/fjsousa
-  #title: Clojure Full-Stack Developer
   title: Full-Stack Developer
+  #title: Clojure Full-Stack Developer
+  #title: Back-End Engineer
   #title: Functional Language Developer
   #title: Software Engineer (Contractor)
   #title: Software Engineer
@@ -34,7 +38,7 @@ summary:
   #- Full-stack developer proficient in Clojure(script), JavaScript, and Python. I have relevant experience as a research assistant at the University of Lisbon, where I focused on forest fire modelling on GPUs with a GIS component for elevation data. Recently, I spent two years building a remote sensor dashboard using reactive frameworks and I'm also competent building impeccable HTML and CSS pages, including the layout of this CV.
 
   # CLOJURE
-  #- Full-stack developer proficient in Clojure(script), JavaScript, and Python. Mostly, I am a technologist who enjoys the process of building something for users. I have been writing Clojure since late 2015 and recently had the opportunity to share the joys of Clojure by mentoring more junior engineers. Over the years, I have worked for different industries and with many technologies in the ecosystem (Reagent, Re-frame, Ring, Pedestal, Datomic, Babashka, and others).
+ # - Full-stack developer proficient in Clojure(script), JavaScript, and Python. Mostly, I am a technologist who enjoys the process of building something for users. I have been writing Clojure since late 2015 and recently had the opportunity to share the joys of Clojure by mentoring more junior engineers. Over the years, I have worked for different industries and with many technologies in the ecosystem (Reagent, Re-frame, Ring, Pedestal, Datomic, Babashka, and others).
 
   # CLOJURE EXTRA
   #- I choose to work with Clojure because of the guarantees it gives me in a professional environment. Being a functional language with an emphasis on immutability and an expressive standard library, I know I can find my way in any codebase. Being a Lisp gives it that extra touch of sophistication. However, I do believe people solve problems, not tools, so I'm always happy to work with other languages and have done so in the past. I feel comfortable working with any codebase in Typescript, Go, Kotlin, Python, Ruby, and I am curious to try Erlang, Haskell, and Rust.
@@ -49,11 +53,11 @@ summary:
 
   #- I am a full-stack developer with professional experience in Clojure(script), JavaScript, and Python. My ten-year-long career in web development has given me a solid understanding of how web technologies work. I work best with a team under constraints imposed by complex real-life problems.
 
-  - I am a full-stack developer with professional experience in Clojure(script), JavaScript, and Python. My ten-year-long career in web development has given me a solid understanding of how web technologies work. I work best in a collaborative environment and I understand the nature of compromises that have to be made in a tech stack, given time and resource constraints.
+  - I am a full-stack developer with a background in engineering fluid simulation and professional experience in Clojure(script), JavaScript, Ruby, Python, and Go. My decade-long career in web development has given me a solid understanding of how web technologies function. I work best in collaborative environments and I understand the nature of compromises that have to be made in a tech stack, given time and resource constraints.
 
   #I approach every new tech stack with an open mind and the certainty that every decision was made under specific real-life constraints.
 
-  - The focus of my tech career has always been on determining the most effective way to apply technology to specific real-world use cases.
+  #- The focus of my tech career has always been on determining the most effective way to apply technology to specific real-world use cases.
 
     #- I am a full-stack developer with professional experience in Clojure(script), JavaScript, and Python. Mostly, I am a technologist who enjoys the process of building something with a real-world use case.
     #- Recently, I spent two years working closely with founders and building a remote sensor data ingestion pipeline for AI detection of drilling issues.
@@ -84,7 +88,7 @@ education:
 # Work Experience
 experience:
   # independent work
-  - title: Independent Freelancer
+  - title: Independent Work
     company: CodeCadre LTD
     location: Remote
     dates:
@@ -93,36 +97,40 @@ experience:
     description: |
       Between contracts, I made several contributions under CodeCadre LTD.
     achievements:
-      - Maintained an open dataset of driving school pass rates and made other open-source contributions.
-      - Tech advisor for multiple early-stage businesses. Speaker at tech conferences.
+      - Maintained an open dataset of driving school pass rates and made open-source contributions in Go.
+      - Tech advisor for multiple early-stage businesses (some went live, some didn't.) Speaker at tech conferences.
       - Mentored individuals from low-income backgrounds.
     technologies:
       - Clojure(Script)
-      - Babashka
-      - Tailwind
+      - Go
       - Python
+      - Tailwind
 
   # AWAZE
-  - title: Clojure Contractor
+  - title: Clojure Contractor under Equal Experts
     company: Awaze
     location: Manchester (Remote)
     dates:
       - 01/08/2022
       - 01/12/2022
     achievements:
-      - I was integrated into a team that was migrating from a legacy system to Clojure and Kotlin microservices. The team exclusively did mob programming.
-      - Made several critical contributions that reduced delivery time by two months.
-      #- Mentored new members of the team by conducting regular Friday afternoon Clojure practice sessions.
-      - Mentored new members of the team by conducting regular Friday afternoon coding sessions.
+      - Migration from a legacy SQL Server to Clojure and Kotlin microservices. The team exclusively did mob programming.
+      #- Made several critical contributions that reduced delivery time by two months.
+      #- Mentored new team members by conducting regular Friday afternoon Clojure practice sessions.
+      - Mentored new team members  by conducting regular Friday afternoon coding sessions.
       - Successfully identified bottlenecks with a custom profiling tool.
     technologies:
       - Clojure
       - AWS
       - Postgres
       - Kotlin
+      ##############
+      # Architecture
+      ##############
       #- Microservices
 
   - title: Career Break
+    location: Italy and Lisbon
     dates:
       - 01/08/2021
       - 01/07/2022
@@ -130,27 +138,34 @@ experience:
       Took time off to realign my skills with my interests. Made open-source contributions and acquired several certificates (see next page). Helped non-profit organizations with their web strategy.
 
   # Origin Rose
-  - title: Clojure Contractor
+  #- title: Clojure Contractor
+  - title: Clojure Full-Stack Dev
     company: Momentum AI
     location: Colorado (Remote)
     dates:
       - 01/08/2019
       - 01/08/2021
     achievements:
-      - Full-stack Clojure monolith that ingested data for a neural net. #and displayed high-frequency data. # with Plotly.js.
+      - Full-stack Clojure monolith that ingested data from a Python data pipeline. #for a neural net. # and displayed high-frequency data with Plotly.js.
       #- Helped the initial consulting business transition into a successful remote sensing company.
-      - Drastically reduced build time and overall frontend optimization. #with shadow-cljs and devcards.
-      #- Build time and other frontend optimization. # with shadow-cljs and devcards.
+      #- Drastically reduced build time and overall frontend optimization with shadow-cljs and devcards.
+      - Build time and other frontend optimization. # with shadow-cljs and devcards.
       - Fully owned an Elastic Search instance for remote sensor monitoring.
     technologies:
-      #- Plotly.js
       - Clojure(Script)
       - Python
-      #- Reagent
-      #- Re-Frame
       - Postgres
+      ##################
+      # Back-end focused
+      ##################
       #- Timescale
       - ElasticSearch
+      ###################
+      # Frontend focused:
+      ###################
+      #- Plotly.js
+      #- Reagent
+      #- Re-Frame
 
   # Youview
   - title: Cloud Services Engineer
@@ -167,6 +182,9 @@ experience:
       - Go
       - Clojure
       - AWS
+      ##############
+      # Architecture
+      ##############
       - Microservices
 
   # Funding Circle
@@ -179,13 +197,21 @@ experience:
     achievements:
       - Kafka microservices in Clojure.
       - Volunteered as part of a crisis team for production issues on multiple occasions.
-      - Developed in-house tooling to ssh into Kafka dev environments.
+      - Developed in-house tooling to SSH into Kafka dev environments.
     technologies:
       - Clojure
       - Kafka
-      - Docker
       - Ruby
-      - Microservices
+      ###############
+      # Architecture
+      ##############
+      - Event-Streaming
+      #- Microservices
+      ################
+      # Platform
+      ################
+      # -Docker
+      # -Mesos
 
   # Style.com
   - title: Software Engineer
@@ -200,10 +226,15 @@ experience:
       - "Worked in different tech departments: API, marketing, and product ingest. Learned two new languages: Clojure and Lua."
     technologies:
       - Clojure(Script)
-      - Node.js
-      - Docker
+      - Datomic
+      #- Node.js
       #- NGINX/Lua/OpenResty
       - NGINX/OpenResty
+      ################
+      # Platform
+      ################
+      #- Docker
+
 
   # Freelancing
   - title: Independent Full-Stack Developer
@@ -212,7 +243,7 @@ experience:
       - 01/03/2014
       - 01/04/2015
     achievements:
-      - Oversaw all stages of the projects, including finding clients, presenting quotes, gathering requirements, development, deployment, and infrastructure management.
+      - Oversaw all project stages, including gathering requirements from clients and presenting quotes, development, deployment, and infrastructure management.
       - Contributed to the early stage launch of businesses, still live as of 2023.
     technologies:
       - Ruby on Rails
@@ -227,7 +258,7 @@ experience:
       - 01/03/2013
       - 01/03/2014
     achievements:
-      - Played a pivotal role as the third employee, due to my academic background. Development of applications in collaboration with experts in several fields, including computer vision, neuroscience, bioinformatics, and genetic algorithms.
+      - Played a pivotal role as the third employee, due to my research background. Development of applications in collaboration with experts in several fields, including computer vision, neuroscience, bioinformatics, and genetic algorithms.
       - Released a forest-fire model based on original research.
     technologies:
       - Node.js
@@ -259,18 +290,42 @@ skills:
   - Product
   - Web Technologies
   - CI/CD
-  #- Storage Systems
-  #- Cloud Infrasctructure
-  #- Front-end Frameworks
-  #- Functional Lang.
-  - Data Ingest
-  #- REPL
-  - Figma
-  #- AWS
+  - Functional Lang.
+  #- Data Ingest
   - Algorithms
-#  - Blockchain
+  ###################
+  # BACK-END
+  ##################
+  - Storage Systems
+  - Cloud Infra.
+  #- AWS # Already mentioned in separate block
+  #
+  ###################
+  # BLOCKCHAIN
+  ###################
+  #
+  #- Blockchain
+  #
+  ###################
+  # CLJ ONLY
+  ###################
+  #
+  #- REPL
+  #
+  ###################
+  # FRONT-END
+  ###################
+  #
+  #- Figma
+  #- Front-end Frameworks
+
+
+
 
 toolbox:
+  ################
+  # LANGUAGES
+  ################
   - Clojure(script)
   - Clojure
   - JavaScript
@@ -279,13 +334,23 @@ toolbox:
   - CUDA/GPU
   - Node.js
   - Lua (NGINX)
-  - Tailwind
+  ########
+  # DB
+  #######
   - Postgres
   - Elastic Search
   - Kafka
   - Datomic
+  #################
+  # SYSTEM/PLATFORM
+  #################
   - Docker
   - Git, Linux
+  #############
+  # FRONT-END ONLY
+  ############
+  #- Tailwind
+
 
 aws:
   - ECS
@@ -323,6 +388,9 @@ tech-community:
   - title: Speaker at Equal Experts Conference
     year: 2023
     url: https://www.youtube.com/watch?v=j-7nOSaE4Tg
+  - title: Clojure macros for performance testing
+    year: 2022
+    url: https://github.com/fjsousa/afinar
   - title: Maintaining Open Pass Rates
     url: https://passaprimeira.xyz/
     year: 2021
