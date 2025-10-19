@@ -19,7 +19,7 @@
              (spit ".nrepl-port" "1339")
              (-> (Runtime/getRuntime)
                  (.addShutdownHook
-                  (Thread. (fn [] (fs/delete ".nrepl-port")))))
+                   (Thread. (fn [] (fs/delete ".nrepl-port")))))
              (deref (promise)))}
 
   serve {:doc "Serve static assets"
@@ -44,7 +44,8 @@
   to-pdf {:doc "prints to pdf"
           :task (do (shell "node src/js/index.js")
 
-                    (shell "qpdf --empty --pages pdf/page-one.pdf pdf/page-two.pdf -- pdf/resume.pdf "))}
+                    (shell "qpdf --empty --pages pdf/page-one.pdf pdf/page-two.pdf -- pdf/resume.pdf ")
+                    (shell "qpdf --empty --pages pdf/personal-info/page-one.pdf pdf/page-two.pdf -- pdf/personal-info/resume.pdf "))}
 
   build-css {:doc "produces html/global.css, accepts -m and --watch flags"
              :task (apply shell "./node_modules/tailwindcss/lib/cli.js -i ./src/css/global.css -o ./html/global.css" *command-line-args*)}
@@ -75,8 +76,8 @@
                          (println "CTRL-C to quit...")
                          (fw/watch "." (fn [{:keys [type path] :as ev}]
                                          (when (or
-                                                (= path "./resume.yaml")
-                                                (= (fs/extension path) "clj"))
+                                                 (= path "./resume.yaml")
+                                                 (= (fs/extension path) "clj"))
                                            (println :building-after ev)
                                            (run 'yaml-to-html)
                                            (run 'to-pdf)))
@@ -85,6 +86,9 @@
                          (deref (promise)))}
   -watch-everything {:depends [watch-css watch-build]}
   watch-everything {:task (run '-watch-everything {:parallel true})}
+  release-build {:doc "builds everything with RELEASE=TRUE"
+                 :task (do (shell {:extra-env {"RELEASE" "TRUE"}}
+                                  "bb" "builds-everything-once"))}
   deploy {:doc "rsync html folder shared host"
           :task (do (shell "cp pdf/resume.pdf html/resume.pdf")
                     (shell "git add html/resume.pdf")

@@ -24,7 +24,7 @@
    [:meta {:property "og:url" :content "https://cv.flaviosousa.co"}]
    [:link {:rel "canonical" :href "https://cv.flaviosousa.co"}]
    [:title "CV | flaviosousa.co"]
-   [:link {:rel "stylesheet" :href css-filename}]
+   [:link {:rel "stylesheet" :href (str "/" css-filename)}]
    [:script {:src "https://plausible.io/js/plausible.js"
              :async "defer" :data-domain "cv.flaviosousa.co"}]])
 
@@ -370,4 +370,4 @@
         [:a.text-inherit {:href "/resume.pdf" :target "_blank"} "PDF"] [:span " "]
         [:a.text-inherit {:href "https://github.com/fjsousa/babashka-resume" :target "_blank"} "Source code"]])]]
    (when (not (System/getenv "RELEASE"))
-     [:script {:src "live.js"}])])
+     [:script {:src "/live.js"}])])

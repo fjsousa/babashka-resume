@@ -27,5 +27,11 @@ const puppeteer = require('puppeteer');
     ...printOptions,
   });
 
+  await page.goto('http://localhost:1337/personal-info/page-one.html');
+  await page.pdf({
+    path: './pdf/personal-info/page-one.pdf',
+    ...printOptions,
+  })
+
   await browser.close();
 })();
