@@ -200,13 +200,12 @@
         [:div.relative.text-body.font-medium.inline-block.leading-110
 
          (let [item-fn (fn [{:keys [title url year]}]
-                         [[:span title]
-                          [:span.items-center.flex
-                           [:span.text-dimgray.text-base (str year ".")]
-                           (when url
-                             [:a.decoration-none.inline-flex.gray-link-box
-                              {:href url :target "_blank" :class "w-[1rem]"}
-                              link-box])]])]
+                         [[:span (str title ". ")
+                           [:span.text-dimgray.text-base year
+                            (when url
+                              [:a.decoration-none.inline-flex.gray-link-box.relative
+                               {:href url :target "_blank" :class "w-[1rem] top-[2px]"}
+                               link-box])]]])]
            (into [:ul.pl-0.list-dash]
                  (conj
                   (mapv (fn [item]
