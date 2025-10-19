@@ -24,9 +24,7 @@
    [:meta {:property "og:url" :content "https://cv.flaviosousa.co"}]
    [:link {:rel "canonical" :href "https://cv.flaviosousa.co"}]
    [:title "CV | flaviosousa.co"]
-   [:link {:rel "stylesheet" :href (str "/" css-filename)}]
-   [:script {:src "https://plausible.io/js/plausible.js"
-             :async "defer" :data-domain "cv.flaviosousa.co"}]])
+   [:link {:rel "stylesheet" :href (str "/" css-filename)}]])
 
 (def link-box
   [:svg
