@@ -3,3 +3,4 @@
 .nrepl-port
 node_modules/
 pdf/archive/
+.details.edn
