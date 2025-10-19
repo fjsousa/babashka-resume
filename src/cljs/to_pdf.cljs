@@ -9,7 +9,7 @@
    :scale 0.59
    :pageRanges "1"})
 
-(p/let [browser (.launch puppeteer #js {:headless true})
+(p/let [browser (.launch puppeteer #js {:args ["--no-sandbox" "--disable-setuid-sandbox" ]})
         page (.newPage browser)]
   (.goto page "http://localhost:1337/page-one.html")
   (.pdf page (clj->js (merge
