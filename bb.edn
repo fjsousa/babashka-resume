@@ -28,26 +28,26 @@
                                     :dir "./html/"}
                                    cli-opts))}
 
-  prn {:task (clojure "-X clojure.core/prn" cli-opts)}
+  prn {:task (clojure "-X clojure.core/prn" cli-opts)}  ;;why?
 
   -dev {:depends [serve prn]}
 
   dev {:task (run '-dev {:parallel true})}
 
   beautify {:doc "pretty print html document."
-            :task (shell "npx js-beautify --type html html/*.html -r -s 2 -d")}
+            :task (shell "./node_modules/js-beautify/js/lib/cli.js --type html html/*.html -r -s 2 -d")}
 
   yaml-to-html {:doc "builds html/index.html"
                 ;;TODO rename
                 :task (do (shell "bb -m yaml-to-edn")
                           (run 'beautify))}
   to-pdf {:doc "prints to pdf"
-          :task (do (shell "npx nbb src/cljs/to_pdf.cljs")
+          :task (do (shell "node src/js/index.js")
 
                     (shell "qpdf --empty --pages pdf/page-one.pdf pdf/page-two.pdf -- pdf/resume.pdf "))}
 
   build-css {:doc "produces html/global.css, accepts -m and --watch flags"
-             :task (apply shell "npx tailwindcss -i ./src/css/global.css -o ./html/global.css" *command-line-args*)}
+             :task (apply shell "./node_modules/tailwindcss/lib/cli.js -i ./src/css/global.css -o ./html/global.css" *command-line-args*)}
 
   hash-css-output {:doc "produces html/global-[content-hash].css once"
                    :task (do (let [css-file-hash (subs (:out (shell {:out :string} "md5sum ./html/global.css")) 0 6)]
@@ -58,7 +58,8 @@
              :doc "watch css"
              :task (binding [*command-line-args* (list "--watch" "-m")]
                      (run 'build-css))}
-  builds-everything-once {:task
+  builds-everything-once {:doc "publishes with hashed css"
+                          :task
                           (do #_(shell "rm ./html/global*")
                               (binding [*command-line-args* (list "-m")]
                                 (run 'build-css))

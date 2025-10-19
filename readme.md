@@ -4,28 +4,25 @@ My Google Docs CV was becoming difficult to manage. I started with a single docu
 
 This is the setup I came up with:
 
-I start with a single `resume.yaml` file, which gives me the feel of a document that I can read "as a human" while still being machine-readable. I chose YAML over other formats like Markdown because it's easier to parse into structured data.
+I start with a single `resume.yaml` file, which gives me the feel of a document that I can read "as a human" while still being machine-readable. I chose YAML over other formats like Markdown simply because it's structured and easy to read.
 
-In this `resume.yaml` file, I can comment out specific parts, making it easier to propagate changes compared to a WYSIWYG editor. Additionally, version control gives me the diff, making it easy to review changes and avoid nasty surprises.
+In this `resume.yaml` file, I can comment out specific parts, making it easier to propagate changes compared to a WYSIWYG editor. Additionally, version control makes it easy to review changes and avoid surprises.
 
 I used this [figma template](https://www.figma.com/community/file/1230670384525015423/Just-Another-Resume-Template) with [locofy.ai](locofy.ai) to generate the markup and Tailwind configuration.
 
 Then I turned the markup into Hiccup and used Babashka tasks as a build tool.
 
-## Build
-The server needs to be running first:
+## Dependencies
+
+- bb
+- node & npm
+- qpdf
 
 ```
-bb dev
+npm i
 ```
 
-then,
-
-```
-bb builds-everything-once
-```
-
-## Check it
+## Run http server
 
 ```
 bb dev
